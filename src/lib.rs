@@ -1,3 +1,5 @@
+#![cfg_attr(not(feature = "std"), no_std)]
+
 /// common constants that get used around the crate a fair bit
 pub(crate) mod constants;
 pub mod errors;
