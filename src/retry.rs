@@ -1,4 +1,4 @@
-// copied almost verbatim from the OG, just removed the error from the trait since it never happened
+// copied almost verbatim from https://github.com/jpopesculian/reqwest-eventsource/blob/main/src/retry.rs, just removed the error from the trait since it never happened
 
 //! Helpers to handle connection delays when receiving errors
 
