@@ -4,6 +4,7 @@ pub mod errors;
 pub mod event;
 pub mod event_stream;
 pub mod parser;
+#[cfg(feature = "reqwest")]
 pub mod reqwest;
 pub mod retry;
 pub mod utf8_stream;
