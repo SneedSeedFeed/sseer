@@ -2,7 +2,7 @@
 
 //! Helpers to handle connection delays when receiving errors
 
-use std::time::Duration;
+use core::time::Duration;
 
 /// Describes how an [crate::EventSource] should retry
 pub trait RetryPolicy {

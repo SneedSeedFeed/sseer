@@ -32,7 +32,7 @@ macro_rules! impl_samey_error {
         where
             E: Display,
         {
-            fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+            fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
                 match self {
                     $name::Transport(e) => e.fmt(f),
                     $name::Utf8Error(e) => e.fmt(f),
