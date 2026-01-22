@@ -2,6 +2,7 @@ use bytes::BytesMut;
 use bytes_utils::Str as BytesStr;
 
 use core::pin::Pin;
+use core::task::ready;
 use futures_core::stream::Stream;
 use futures_core::task::{Context, Poll};
 use pin_project_lite::pin_project;
@@ -44,7 +45,7 @@ where
         let mut this = self.project();
         let (stream_res, buffer) = match this.state.as_mut().project() {
             Utf8StreamProjection::Active { stream, buffer } => {
-                (futures_core::ready!(stream.poll_next(cx)), buffer)
+                (ready!(stream.poll_next(cx)), buffer)
             }
             Utf8StreamProjection::Terminated => return Poll::Ready(None),
         };

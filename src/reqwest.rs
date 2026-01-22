@@ -1,11 +1,11 @@
 use core::{
     pin::Pin,
-    task::{Context, Poll},
+    task::{Context, Poll, ready},
     time::Duration,
 };
 
 use bytes_utils::Str;
-use futures_core::{future::BoxFuture, ready};
+use futures_core::future::BoxFuture;
 use futures_timer::Delay;
 
 use http_body_util::BodyDataStream;
@@ -20,7 +20,7 @@ use crate::{
     errors::CantCloneError,
     event::Event,
     event_stream::EventStream,
-    retry::{ExponentialBackoff, RetryPolicy},
+    retry::{DEFAULT_RETRY, ExponentialBackoff, RetryPolicy},
 };
 
 #[derive(Debug, Clone)]
@@ -63,6 +63,8 @@ pin_project! {
     }
 }
 
+// just some reasoning on this func: this is sort of what `Response::bytes_stream` does under da hood to make its stream, but the stream it gives you is an Impl Stream thus I cant name the bugger.
+// if i decide boxing is better then I can still do that in future
 fn response_to_stream(response: Response) -> EventStream<BodyDataStream<Body>> {
     EventStream::new(BodyDataStream::new(Body::from(response)))
 }
@@ -134,7 +136,7 @@ impl<R> EventSource<R> {
                 retry_state: None,
             },
             last_event_id: EMPTY_STR,
-            retry_policy: crate::retry::DEFAULT_RETRY,
+            retry_policy: DEFAULT_RETRY,
         })
     }
 }
