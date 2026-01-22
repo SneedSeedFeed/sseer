@@ -639,7 +639,6 @@ dependencies = [
  "futures",
  "futures-core",
  "futures-timer",
- "futures-util",
  "http-body-util",
  "memchr",
  "pin-project-lite",

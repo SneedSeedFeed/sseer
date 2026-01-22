@@ -1,14 +1,13 @@
-use std::{
+use core::{
     pin::Pin,
     task::{Context, Poll},
     time::Duration,
 };
 
-use bytes::BytesMut;
 use bytes_utils::Str;
 use futures_core::{future::BoxFuture, ready};
 use futures_timer::Delay;
-use futures_util::FutureExt;
+
 use http_body_util::BodyDataStream;
 use pin_project_lite::pin_project;
 use reqwest::{
@@ -126,7 +125,7 @@ impl<'pin, R> EventSourceProjection<'pin, R> {
 impl<R> EventSource<R> {
     pub fn new(request: RequestBuilder) -> Result<EventSource<ExponentialBackoff>, CantCloneError> {
         let request = request.header(ACCEPT, HeaderValue::from_static("text/event-stream"));
-        let req_fut = request.try_clone().ok_or(CantCloneError)?.send().boxed();
+        let req_fut = Box::pin(request.try_clone().ok_or(CantCloneError)?.send());
 
         Ok(EventSource {
             builder: request,

@@ -117,7 +117,7 @@ impl EventBuilder {
 
         // There's a check for a trailing LF here but I am not sure this ever goes off? I added it anyways to match the source but I don't think my parser would ever bring back a trailing LF
         if *data_buffer.as_bytes().last().unwrap() == LF {
-            // This should basically be a no-op as I'm just pulling it out of the wrapper
+            // This should basically be a no-op as I'm just pulling it out of the wrapper, mutating then shoving it back in again
             let mut buf = data_buffer.into_inner();
             buf.truncate(buf.len() - 1);
             // Safety: we just removed the final byte, which is known to be LF and thus can't be part of another utf-8 codepoint
