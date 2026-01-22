@@ -13,8 +13,8 @@ use futures_timer::Delay;
 use http_body_util::BodyDataStream;
 use pin_project_lite::pin_project;
 use reqwest::{
-    Body, Error as ReqwestError, RequestBuilder, Response,
-    header::{ACCEPT, HeaderName, HeaderValue},
+    Body, Error as ReqwestError, RequestBuilder, Response, StatusCode,
+    header::{ACCEPT, CONTENT_TYPE, HeaderName, HeaderValue},
 };
 
 use crate::{
@@ -77,6 +77,7 @@ fn response_to_stream(response: Response) -> EventStream<BodyDataStream<Body>> {
     EventStream::new(BodyDataStream::new(Body::from(response)))
 }
 
+const TEXT_EVENT_STREAM: HeaderValue = HeaderValue::from_static("text/event-stream");
 impl<'pin, R> EventSourceProjection<'pin, R> {
     fn initiate_connection(
         &mut self,
@@ -98,14 +99,33 @@ impl<'pin, R> EventSourceProjection<'pin, R> {
 
     fn handle_successful_response(
         &mut self,
-        res: Response,
+        response: Response,
         retry_state: Option<(usize, Duration)>,
-    ) {
-        let stream = response_to_stream(res);
+    ) -> Result<(), EventSourceErrorKind> {
+        let status = response.status();
+        if !status.is_success() {
+            return Err(EventSourceErrorKind::InvalidStatusCode {
+                status,
+                response: Box::new(response),
+            });
+        }
+
+        if let Some(content_type) = response.headers().get(CONTENT_TYPE)
+            && content_type != TEXT_EVENT_STREAM
+        {
+            return Err(EventSourceErrorKind::InvalidContentType {
+                status,
+                content_type: content_type.clone(),
+                response: Box::new(response),
+            });
+        }
+
+        let stream = response_to_stream(response);
         *self.connection_state = ConnectionState::Open {
             stream,
             retry_state,
         };
+        Ok(())
     }
 
     fn start_retry(&mut self, attempt_number: usize, delay_duration: Duration) {
@@ -116,11 +136,11 @@ impl<'pin, R> EventSourceProjection<'pin, R> {
         })
     }
 
-    fn handle_error(&mut self, last_retry: Option<(usize, Duration)>)
+    fn handle_error(&mut self, err: &EventSourceErrorKind, last_retry: Option<(usize, Duration)>)
     where
-        R: RetryPolicy,
+        R: RetryPolicy<EventSourceErrorKind>,
     {
-        if let Some(retry_delay) = self.retry_policy.retry(last_retry) {
+        if let Some(retry_delay) = self.retry_policy.retry(err, last_retry) {
             let retry_num = last_retry.map(|retry| retry.0).unwrap_or(1);
             self.start_retry(retry_num, retry_delay);
         } else {
@@ -130,7 +150,7 @@ impl<'pin, R> EventSourceProjection<'pin, R> {
 
     fn handle_event(&mut self, event: &Event)
     where
-        R: RetryPolicy,
+        R: RetryPolicy<EventSourceErrorKind>,
     {
         *self.last_event_id = event.id.clone();
         if let Some(duration) = event.retry {
@@ -161,6 +181,15 @@ enum EventSourceErrorKind {
     InvalidLastEventId(Str),
     Transport(ReqwestError),
     Stream(EventStreamError<ReqwestError>),
+    InvalidStatusCode {
+        status: StatusCode,
+        response: Box<Response>, // boxed because this was a big error
+    },
+    InvalidContentType {
+        status: StatusCode,
+        content_type: HeaderValue,
+        response: Box<Response>,
+    },
     StreamEnded, // not sure how i feel about this being an error tbh, change me?
 }
 
@@ -170,6 +199,22 @@ impl Display for EventSourceErrorKind {
             EventSourceErrorKind::InvalidLastEventId(s) => s.fmt(f),
             EventSourceErrorKind::Transport(err) => err.fmt(f),
             EventSourceErrorKind::Stream(err) => err.fmt(f),
+            EventSourceErrorKind::InvalidStatusCode { status, .. } => write!(
+                f,
+                "got non 2XX status code {status}: '{canonical}'",
+                canonical = status.canonical_reason().unwrap_or("no canonical reason")
+            ),
+            EventSourceErrorKind::InvalidContentType {
+                status,
+                content_type,
+                ..
+            } => write!(
+                f,
+                "got invalid content-type '{content_type}' on status '{status}' request",
+                content_type = content_type
+                    .to_str()
+                    .unwrap_or("unable to read content-type as str")
+            ),
             EventSourceErrorKind::StreamEnded => "stream ended".fmt(f),
         }
     }
@@ -207,6 +252,53 @@ impl EventSourceError {
             kind: kind.into(),
         }
     }
+
+    pub fn is_status_code(&self) -> bool {
+        matches!(self.kind, EventSourceErrorKind::InvalidStatusCode { .. })
+    }
+
+    pub fn is_content_type(&self) -> bool {
+        matches!(self.kind, EventSourceErrorKind::InvalidContentType { .. })
+    }
+
+    pub fn is_response_err(&self) -> bool {
+        matches!(
+            self.kind,
+            EventSourceErrorKind::InvalidContentType { .. }
+                | EventSourceErrorKind::InvalidStatusCode { .. }
+        )
+    }
+
+    pub fn status_code(&self) -> Option<StatusCode> {
+        match &self.kind {
+            EventSourceErrorKind::InvalidStatusCode { status, .. }
+            | EventSourceErrorKind::InvalidContentType { status, .. } => Some(*status),
+            _ => None,
+        }
+    }
+
+    pub fn response(&self) -> Option<&Response> {
+        match &self.kind {
+            EventSourceErrorKind::InvalidStatusCode { response, .. }
+            | EventSourceErrorKind::InvalidContentType { response, .. } => Some(response),
+
+            _ => None,
+        }
+    }
+
+    pub fn into_response_err(self) -> Option<(Response, StatusCode, Option<HeaderValue>)> {
+        match self.kind {
+            EventSourceErrorKind::InvalidStatusCode { response, status } => {
+                Some((*response, status, None))
+            }
+            EventSourceErrorKind::InvalidContentType {
+                status,
+                content_type,
+                response,
+            } => Some((*response, status, Some(content_type))),
+            _ => None,
+        }
+    }
 }
 
 impl From<ReqwestError> for EventSourceErrorKind {
@@ -223,7 +315,7 @@ impl From<EventStreamError<ReqwestError>> for EventSourceErrorKind {
 
 impl<R> futures_core::Stream for EventSource<R>
 where
-    R: RetryPolicy,
+    R: RetryPolicy<EventSourceErrorKind>,
 {
     type Item = Result<StreamEvent, EventSourceError>;
 
@@ -238,7 +330,14 @@ where
                     let retry_state = *retry_state;
                     match ready!(future.poll(cx)) {
                         Ok(response) => {
-                            this.handle_successful_response(response, retry_state);
+                            if let Err(kind) =
+                                this.handle_successful_response(response, retry_state)
+                            {
+                                return Poll::Ready(Some(Err(EventSourceError::new(
+                                    kind,
+                                    retry_state,
+                                ))));
+                            };
                             return Poll::Ready(Some(Ok(StreamEvent::Open)));
                         }
                         Err(err) => {
@@ -253,7 +352,7 @@ where
                     delay_duration,
                 } => {
                     ready!(delay.poll(cx));
-                    let retry_state = Some((*attempt_number, *delay_duration));
+                    let retry_state = Some((*attempt_number + 1, *delay_duration));
                     if let Err(err) = this.initiate_connection(retry_state) {
                         this.connection_state.set(ConnectionState::Closed);
                         return Poll::Ready(Some(Err(EventSourceError::new(err, retry_state))));
@@ -270,13 +369,18 @@ where
                             return Poll::Ready(Some(Ok(event.into())));
                         }
                         Some(Err(err)) => {
-                            this.handle_error(retry_state);
-                            return Poll::Ready(Some(Err(EventSourceError::new(err, retry_state))));
+                            let err_kind = err.into();
+                            this.handle_error(&err_kind, retry_state);
+                            return Poll::Ready(Some(Err(EventSourceError::new(
+                                err_kind,
+                                retry_state,
+                            ))));
                         }
                         None => {
-                            this.handle_error(retry_state);
+                            let err_kind = EventSourceErrorKind::StreamEnded;
+                            this.handle_error(&err_kind, retry_state);
                             return Poll::Ready(Some(Err(EventSourceError::new(
-                                EventSourceErrorKind::StreamEnded,
+                                err_kind,
                                 retry_state,
                             ))));
                         }

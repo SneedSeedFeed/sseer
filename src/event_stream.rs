@@ -100,6 +100,7 @@ impl EventBuilder {
     /// 6. If the event type buffer has a value other than the empty string, change the type of the newly created event to equal the value of the event type buffer.
     /// 7. Set the data buffer and the event type buffer to the empty string.
     /// 8. Queue a task which, if the readyState attribute is set to a value other than CLOSED, dispatches the newly created event at the EventSource object.
+    #[must_use]
     fn dispatch(&mut self) -> Option<Event> {
         let EventBuilder {
             mut event,
@@ -146,11 +147,6 @@ enum EventStreamState {
 impl EventStreamState {
     fn is_terminated(&self) -> bool {
         matches!(self, Self::Terminated)
-    }
-
-    #[allow(dead_code)]
-    fn is_started(&self) -> bool {
-        matches!(self, Self::Started)
     }
 
     fn is_not_started(&self) -> bool {

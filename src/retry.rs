@@ -1,14 +1,14 @@
-// copied almost verbatim from https://github.com/jpopesculian/reqwest-eventsource/blob/main/src/retry.rs, just removed the error from the trait since it never happened
+// copied almost verbatim from https://github.com/jpopesculian/reqwest-eventsource/blob/main/src/retry.rs
 
 //! Helpers to handle connection delays when receiving errors
 
 use core::time::Duration;
 
 /// Describes how an [crate::EventSource] should retry
-pub trait RetryPolicy {
+pub trait RetryPolicy<E> {
     /// Submit a new retry delay based on the last retry number and duration, if
     /// available. A policy may also return `None` if it does not want to retry
-    fn retry(&self, last_retry: Option<(usize, Duration)>) -> Option<Duration>;
+    fn retry(&self, err: &E, last_retry: Option<(usize, Duration)>) -> Option<Duration>;
 
     /// Set a new reconnection time if received from an [crate::Event]
     fn set_reconnection_time(&mut self, duration: Duration);
@@ -44,8 +44,8 @@ impl ExponentialBackoff {
     }
 }
 
-impl RetryPolicy for ExponentialBackoff {
-    fn retry(&self, last_retry: Option<(usize, Duration)>) -> Option<Duration> {
+impl<E> RetryPolicy<E> for ExponentialBackoff {
+    fn retry(&self, _: &E, last_retry: Option<(usize, Duration)>) -> Option<Duration> {
         if let Some((retry_num, last_duration)) = last_retry {
             if self.max_retries.is_none() || retry_num < self.max_retries.unwrap() {
                 let duration = last_duration.mul_f64(self.factor);
@@ -85,8 +85,8 @@ impl Constant {
     }
 }
 
-impl RetryPolicy for Constant {
-    fn retry(&self, last_retry: Option<(usize, Duration)>) -> Option<Duration> {
+impl<E> RetryPolicy<E> for Constant {
+    fn retry(&self, _: &E, last_retry: Option<(usize, Duration)>) -> Option<Duration> {
         if let Some((retry_num, _)) = last_retry {
             if self.max_retries.is_none() || retry_num < self.max_retries.unwrap() {
                 Some(self.delay)
@@ -106,8 +106,8 @@ impl RetryPolicy for Constant {
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Never;
 
-impl RetryPolicy for Never {
-    fn retry(&self, _last_retry: Option<(usize, Duration)>) -> Option<Duration> {
+impl<E> RetryPolicy<E> for Never {
+    fn retry(&self, _: &E, _last_retry: Option<(usize, Duration)>) -> Option<Duration> {
         None
     }
     fn set_reconnection_time(&mut self, _duration: Duration) {}
