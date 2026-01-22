@@ -9,11 +9,10 @@ use bytes_utils::{Str, StrMut};
 use futures_core::Stream;
 
 use crate::{
+    constants::{BOM, CR, EMPTY_STR, LF, MESSAGE_STR},
     errors::EventStreamError,
     event::Event,
-    parser::{
-        BOM, CR, FieldName, LF, RawEventLineOwned, ValidatedEventLine, parse_line_from_buffer,
-    },
+    parser::{FieldName, RawEventLineOwned, ValidatedEventLine, parse_line_from_buffer},
 };
 
 #[derive(Debug, Clone)]
@@ -24,9 +23,6 @@ struct EventBuilder {
     retry: Option<Duration>,
     is_complete: bool,
 }
-
-const EMPTY_STR: Str = Str::from_static("");
-const MESSAGE_STR: Str = Str::from_static("message");
 
 impl Default for EventBuilder {
     fn default() -> Self {

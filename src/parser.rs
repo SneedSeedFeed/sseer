@@ -3,6 +3,8 @@ use core::str::Utf8Error;
 use bytes::{Buf, Bytes, BytesMut};
 use bytes_utils::Str;
 
+use crate::constants::{CR, LF};
+
 #[derive(Debug, Clone, Copy)]
 pub enum RawEventLine<'a> {
     Comment, // we choose to ignore this since the OG code never uses it anyways
@@ -80,18 +82,6 @@ impl RawEventLineOwned {
     }
 }
 
-pub(crate) const LF: u8 = b'\n';
-pub(crate) const CR: u8 = b'\r';
-
-const BOM_CHAR: char = '\u{FEFF}';
-const BOM_LEN: usize = BOM_CHAR.len_utf8();
-// bom           = %xFEFF ; U+FEFF BYTE ORDER MARK
-pub(crate) const BOM: &[u8; BOM_LEN] = &{
-    let mut buf = [0u8; BOM_LEN];
-    BOM_CHAR.encode_utf8(&mut buf);
-    buf
-};
-
 /// Splits a slice at the next EOL bytes, returns a tuple where the first value is the non-inclusive end of the line and the second value is the inclusive start of the remainder.
 /// Returns [None] if more data is required to find the next EOL / an EOL byte is not found.
 fn find_eol(bytes: &[u8]) -> Option<(usize, usize)> {
@@ -159,6 +149,8 @@ pub fn parse_line(bytes: &[u8]) -> Option<(RawEventLine<'_>, &[u8])> {
     Some((read_line(line_to_read), next))
 }
 
+/// Reads the next [RawEventLineOwned] from the buffer, then advances the buffer past the corresponding EOL.
+/// Returns [None] if the buffer contains no [CR], [LF] or crlf. Additionally returns [None] if the buffer ends with a [CR] as it could end up being a crlf if more data is added.
 pub fn parse_line_from_buffer(buffer: &mut BytesMut) -> Option<RawEventLineOwned> {
     let (line_end, rem_start) = find_eol(buffer)?;
 

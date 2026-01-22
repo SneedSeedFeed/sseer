@@ -5,6 +5,7 @@ use std::{
 };
 
 use bytes::BytesMut;
+use bytes_utils::Str;
 use futures_core::{future::BoxFuture, ready};
 use futures_timer::Delay;
 use futures_util::FutureExt;
@@ -16,6 +17,7 @@ use reqwest::{
 };
 
 use crate::{
+    constants::EMPTY_STR,
     errors::CantCloneError,
     event::Event,
     event_stream::EventStream,
@@ -34,8 +36,7 @@ pin_project! {
         builder: RequestBuilder,
         #[pin]
         connection_state: ConnectionState,
-        buffer: BytesMut,
-        last_event_id: String,
+        last_event_id: Str,
         retry_policy: R
     }
 }
@@ -68,7 +69,7 @@ fn response_to_stream(response: Response) -> EventStream<BodyDataStream<Body>> {
 }
 
 pub enum SseError {
-    InvalidLastEventId(String),
+    InvalidLastEventId(Str),
 }
 
 impl<'pin, R> EventSourceProjection<'pin, R> {
@@ -133,8 +134,7 @@ impl<R> EventSource<R> {
                 future: req_fut,
                 retry_state: None,
             },
-            buffer: BytesMut::new(),
-            last_event_id: String::new(),
+            last_event_id: EMPTY_STR,
             retry_policy: crate::retry::DEFAULT_RETRY,
         })
     }
@@ -176,9 +176,7 @@ where
             } => {
                 let retry_state = *retry_state;
                 match ready!(stream.poll_next(cx)) {
-                    Some(Ok(bytes)) => {
-                        this.buffer.extend_from_slice(&bytes);
-                    }
+                    Some(Ok(bytes)) => {}
                     Some(Err(e)) => {}
                     None => todo!(),
                 }
