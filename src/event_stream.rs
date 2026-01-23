@@ -312,6 +312,7 @@ where
 
 // tests from https://github.com/jpopesculian/eventsource-stream/blob/main/src/event_stream.rs just adjusted by AI to match my actual API
 #[cfg(test)]
+#[cfg(feature = "std")]
 mod tests {
     use super::*;
     use bytes::Bytes;

@@ -1,5 +1,5 @@
 use bytes::BytesMut;
-use bytes_utils::Str as BytesStr;
+use bytes_utils::Str;
 
 use core::pin::Pin;
 use core::task::ready;
@@ -39,7 +39,7 @@ where
     S: Stream<Item = Result<B, E>>,
     B: AsRef<[u8]>,
 {
-    type Item = Result<BytesStr, Utf8StreamError<E>>;
+    type Item = Result<Str, Utf8StreamError<E>>;
 
     fn poll_next(self: Pin<&mut Self>, cx: &mut Context) -> Poll<Option<Self::Item>> {
         let mut this = self.project();
@@ -58,14 +58,14 @@ where
                     Ok(_) => {
                         // Safety: we just checked the buffer is valid utf8
                         let byte_str =
-                            unsafe { BytesStr::from_inner_unchecked(buffer.split().freeze()) };
+                            unsafe { Str::from_inner_unchecked(buffer.split().freeze()) };
                         Poll::Ready(Some(Ok(byte_str)))
                     }
                     Err(e) => {
                         let valid_to = e.valid_up_to();
                         let valid_utf8 = buffer.split_to(valid_to).freeze();
                         // safety: we just split off the valid section of utf8
-                        let byte_str = unsafe { BytesStr::from_inner_unchecked(valid_utf8) };
+                        let byte_str = unsafe { Str::from_inner_unchecked(valid_utf8) };
                         Poll::Ready(Some(Ok(byte_str)))
                     }
                 }
@@ -82,7 +82,7 @@ where
                     match str::from_utf8(&buffer) {
                         Ok(_) => {
                             // Safety: we just checked the buffer is valid utf8
-                            let byte_str = unsafe { BytesStr::from_inner_unchecked(buffer) };
+                            let byte_str = unsafe { Str::from_inner_unchecked(buffer) };
                             Poll::Ready(Some(Ok(byte_str)))
                         }
                         Err(e) => Poll::Ready(Some(Err(Utf8StreamError::Utf8Error(e)))),
@@ -95,6 +95,7 @@ where
 
 // Tests copied from https://github.com/jpopesculian/eventsource-stream/blob/main/src/utf8_stream.rs and rewritten using claude (I promise the rest of the repo isnt AI slop, I like coding :3)
 #[cfg(test)]
+#[cfg(feature = "std")]
 mod tests {
     use super::*;
     use bytes::Bytes;
@@ -109,7 +110,7 @@ mod tests {
             .try_collect::<Vec<_>>()
             .await
             .unwrap(),
-            vec![BytesStr::from("Hello, world!")]
+            vec![Str::from("Hello, world!")]
         );
 
         assert_eq!(
@@ -117,7 +118,7 @@ mod tests {
                 .try_collect::<Vec<_>>()
                 .await
                 .unwrap(),
-            vec![BytesStr::from("")]
+            vec![Str::from("")]
         );
 
         assert_eq!(
@@ -128,7 +129,7 @@ mod tests {
             .try_collect::<Vec<_>>()
             .await
             .unwrap(),
-            vec![BytesStr::from("Hello"), BytesStr::from(", world!")]
+            vec![Str::from("Hello"), Str::from(", world!")]
         );
 
         // Single emoji in one chunk
@@ -139,7 +140,7 @@ mod tests {
             .try_collect::<Vec<_>>()
             .await
             .unwrap(),
-            vec![BytesStr::from("👍")]
+            vec![Str::from("👍")]
         );
 
         // Emoji split across two chunks
@@ -151,7 +152,7 @@ mod tests {
             .try_collect::<Vec<_>>()
             .await
             .unwrap(),
-            vec![BytesStr::from(""), BytesStr::from("👍")]
+            vec![Str::from(""), Str::from("👍")]
         );
 
         // Emoji split across chunks followed by complete emoji
@@ -163,7 +164,7 @@ mod tests {
             .try_collect::<Vec<_>>()
             .await
             .unwrap(),
-            vec![BytesStr::from(""), BytesStr::from("👍👍")]
+            vec![Str::from(""), Str::from("👍👍")]
         );
 
         // Multiple chunks with mixed ASCII and multi-byte characters
@@ -178,10 +179,10 @@ mod tests {
             .await
             .unwrap(),
             vec![
-                BytesStr::from("Hello "),
-                BytesStr::from(""),
-                BytesStr::from("👍"),
-                BytesStr::from(" world!")
+                Str::from("Hello "),
+                Str::from(""),
+                Str::from("👍"),
+                Str::from(" world!")
             ]
         );
     }
@@ -195,7 +196,7 @@ mod tests {
         .collect::<Vec<_>>()
         .await;
         assert_eq!(results.len(), 2);
-        assert_eq!(results[0], Ok(BytesStr::from("")));
+        assert_eq!(results[0], Ok(Str::from("")));
         assert!(matches!(results[1], Err(Utf8StreamError::Utf8Error(_))));
 
         // Valid emoji followed by incomplete sequence at end
@@ -206,8 +207,8 @@ mod tests {
         .collect::<Vec<_>>()
         .await;
         assert_eq!(results.len(), 3);
-        assert_eq!(results[0], Ok(BytesStr::from("")));
-        assert_eq!(results[1], Ok(BytesStr::from("👍")));
+        assert_eq!(results[0], Ok(Str::from("")));
+        assert_eq!(results[1], Ok(Str::from("👍")));
         assert!(matches!(results[2], Err(Utf8StreamError::Utf8Error(_))));
 
         // Invalid UTF-8 byte in middle of stream
@@ -218,8 +219,8 @@ mod tests {
         .collect::<Vec<_>>()
         .await;
         assert_eq!(results.len(), 3);
-        assert_eq!(results[0], Ok(BytesStr::from("Hello ")));
-        assert_eq!(results[1], Ok(BytesStr::from(""))); // Empty valid portion
+        assert_eq!(results[0], Ok(Str::from("Hello ")));
+        assert_eq!(results[1], Ok(Str::from(""))); // Empty valid portion
         assert!(matches!(results[2], Err(Utf8StreamError::Utf8Error(_))));
     }
 
@@ -233,11 +234,11 @@ mod tests {
         .collect::<Vec<_>>()
         .await;
         assert_eq!(results.len(), 3); // Changed from 2 to 3
-        assert_eq!(results[0], Ok(BytesStr::from("Hello")));
+        assert_eq!(results[0], Ok(Str::from("Hello")));
         assert!(matches!(
             results[1],
             Err(Utf8StreamError::Transport("transport error"))
         ));
-        assert_eq!(results[2], Ok(BytesStr::from("world"))); // Stream continues after error
+        assert_eq!(results[2], Ok(Str::from("world"))); // Stream continues after error
     }
 }
