@@ -250,6 +250,7 @@ impl Display for EventSourceErrorKind {
 
 impl Error for EventSourceErrorKind {}
 
+#[derive(Debug)]
 pub struct EventSourceError {
     retry_state: Option<(usize, Duration)>,
     kind: EventSourceErrorKind,

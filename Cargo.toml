@@ -1,6 +1,6 @@
 [package]
 name = "sseer"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Adam Stopher <adam.stopher@protonmail.com>"]
 edition = "2024"
 resolver = "3"
