@@ -1,7 +1,22 @@
 [package]
 name = "sseer"
 version = "0.1.0"
+authors = ["Adam Stopher <adam.stopher@protonmail.com>"]
 edition = "2024"
+resolver = "3"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/SneedSeedFeed/sseer.git"
+description = "Various helpers for getting Event streams out of your SSE responses"
+documentation = "https://docs.rs/sseer"
+keywords = ["sse", "eventsource", "reqwest", "stream", "event"]
+categories = [
+    "no-std",
+    "parsing",
+    "asynchronous",
+    "web-programming::http-client",
+]
+
 
 [dependencies]
 bytes = { version = "1.11.0", default-features = false }
@@ -16,10 +31,14 @@ reqwest = { version = "0.13.1", features = [
 ], default-features = false, optional = true }
 
 [features]
-default = ["std"]
+default = []
 reqwest = ["dep:reqwest", "std"]
 std = []
 
 [dev-dependencies]
 futures = "0.3.31"
 tokio = { version = "1.49.0", features = ["full"] }
+
+[[example]]
+name = "reqwest"
+required-features = ["reqwest"]

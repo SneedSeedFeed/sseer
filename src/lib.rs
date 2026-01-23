@@ -13,3 +13,5 @@ pub mod utf8_stream;
 // if the reqwest feature is enabled, this is what someone wants
 #[cfg(feature = "reqwest")]
 pub use reqwest::EventSource;
+
+pub use event_stream::EventStream;

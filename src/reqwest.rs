@@ -162,6 +162,26 @@ impl<'pin, R> EventSourceProjection<'pin, R> {
 }
 
 impl<R> EventSource<R> {
+    pub fn new_with_retry(
+        request: RequestBuilder,
+        retry_policy: R,
+    ) -> Result<Self, CantCloneError> {
+        let request = request.header(ACCEPT, HeaderValue::from_static("text/event-stream"));
+        let req_fut = Box::pin(request.try_clone().ok_or(CantCloneError)?.send());
+
+        Ok(EventSource {
+            builder: request,
+            connection_state: ConnectionState::Connecting {
+                future: req_fut,
+                retry_state: None,
+            },
+            last_event_id: EMPTY_STR,
+            retry_policy,
+        })
+    }
+}
+
+impl EventSource<ExponentialBackoff> {
     pub fn new(request: RequestBuilder) -> Result<EventSource<ExponentialBackoff>, CantCloneError> {
         let request = request.header(ACCEPT, HeaderValue::from_static("text/event-stream"));
         let req_fut = Box::pin(request.try_clone().ok_or(CantCloneError)?.send());
