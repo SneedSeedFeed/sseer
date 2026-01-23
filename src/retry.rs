@@ -10,7 +10,7 @@ pub trait RetryPolicy<E> {
     /// available. A policy may also return `None` if it does not want to retry
     fn retry(&self, err: &E, last_retry: Option<(usize, Duration)>) -> Option<Duration>;
 
-    /// Set a new reconnection time if received from an [crate::Event]
+    /// Set a new reconnection time if received from an [`Event`][crate::event::Event]
     fn set_reconnection_time(&mut self, duration: Duration);
 }
 

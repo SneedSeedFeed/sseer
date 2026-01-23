@@ -1,4 +1,4 @@
-//! Representation of SSE events based primarily off https://html.spec.whatwg.org/multipage/server-sent-events.html
+//! Representation of SSE events based primarily off <https://html.spec.whatwg.org/multipage/server-sent-events.html>
 
 use core::time::Duration;
 

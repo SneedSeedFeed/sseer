@@ -150,14 +150,14 @@ fn read_line(bytes: &[u8]) -> RawEventLine<'_> {
     }
 }
 
-/// Tries to read the next [RawEventLine] from `bytes`. Returns [None] if `bytes` contains no complete EOL, this includes a slice ending in just [CR] as we are not yet sure if it's crlf or just a lone cr.
+/// Tries to read the next [RawEventLine] from `bytes`. Returns [None] if `bytes` contains no complete EOL, this includes a slice ending in just cr as we are not yet sure if it's crlf or just a lone cr.
 pub fn parse_line(bytes: &[u8]) -> Option<(RawEventLine<'_>, &[u8])> {
     let (line_to_read, next) = split_at_next_eol(bytes)?;
     Some((read_line(line_to_read), next))
 }
 
 /// Reads the next [RawEventLineOwned] from the buffer, then advances the buffer past the corresponding EOL.
-/// Returns [None] if the buffer contains no [CR], [LF] or crlf. Additionally returns [None] if the buffer ends with a [CR] as it could end up being a crlf if more data is added.
+/// Returns [None] if the buffer contains no cr, lf or crlf. Additionally returns [None] if the buffer ends with a cr as it could end up being a crlf if more data is added.
 pub fn parse_line_from_buffer(buffer: &mut BytesMut) -> Option<RawEventLineOwned> {
     let (line_end, rem_start) = find_eol(buffer)?;
 

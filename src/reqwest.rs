@@ -211,7 +211,7 @@ enum EventSourceErrorKind {
         status: StatusCode,
         response: Box<Response>, // boxed because this was a big error
     },
-    /// Received a 2XX status, but the [Content-Type][CONTENT_TYPE] was not ["text/event-stream"][TEXT_EVENT_STREAM]
+    /// Received a 2XX status, but the [Content-Type][CONTENT_TYPE] was not "text/event-stream"
     InvalidContentType {
         status: StatusCode,
         content_type: HeaderValue,
@@ -286,7 +286,7 @@ impl EventSourceError {
         matches!(self.kind, EventSourceErrorKind::InvalidStatusCode { .. })
     }
 
-    /// Was this error caused by [Content-Type][CONTENT_TYPE] not being ["text/event-stream"][TEXT_EVENT_STREAM]
+    /// Was this error caused by [Content-Type][CONTENT_TYPE] not being "text/event-stream"
     pub fn is_content_type(&self) -> bool {
         matches!(self.kind, EventSourceErrorKind::InvalidContentType { .. })
     }
