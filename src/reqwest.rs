@@ -25,8 +25,10 @@ use crate::{
     retry::{DEFAULT_RETRY, ExponentialBackoff, RetryPolicy},
 };
 
+/// Events emitted by [EventSource]
 #[derive(Debug, Clone)]
 pub enum StreamEvent {
+    /// A new connection has been opened
     Open,
     Event(Event),
 }
@@ -178,18 +180,24 @@ impl<R> EventSource<R> {
 
 #[derive(Debug)]
 enum EventSourceErrorKind {
+    /// The last event ID contains non-visible ascii characters, unusable in a [`HeaderValue`]
     InvalidLastEventId(Str),
+    /// Reqwest has had an error when getting a response
     Transport(ReqwestError),
+    /// The underlying stream has ran into an error
     Stream(EventStreamError<ReqwestError>),
+    /// Received a [non 2xx][reqwest::StatusCode::is_success] response
     InvalidStatusCode {
         status: StatusCode,
         response: Box<Response>, // boxed because this was a big error
     },
+    /// Received a 2XX status, but the [Content-Type][CONTENT_TYPE] was not ["text/event-stream"][TEXT_EVENT_STREAM]
     InvalidContentType {
         status: StatusCode,
         content_type: HeaderValue,
         response: Box<Response>,
     },
+    /// The underlying stream has ran to completion
     StreamEnded, // not sure how i feel about this being an error tbh, change me?
 }
 
@@ -253,14 +261,17 @@ impl EventSourceError {
         }
     }
 
+    /// Was this error caused by [Response::status] being a non 2XX
     pub fn is_status_code(&self) -> bool {
         matches!(self.kind, EventSourceErrorKind::InvalidStatusCode { .. })
     }
 
+    /// Was this error caused by [Content-Type][CONTENT_TYPE] not being ["text/event-stream"][TEXT_EVENT_STREAM]
     pub fn is_content_type(&self) -> bool {
         matches!(self.kind, EventSourceErrorKind::InvalidContentType { .. })
     }
 
+    /// Was the error caused by an invalid [`Response`]
     pub fn is_response_err(&self) -> bool {
         matches!(
             self.kind,
@@ -269,6 +280,7 @@ impl EventSourceError {
         )
     }
 
+    /// Get the status code that caused this error, if it was caused by an invalid [`Response`]
     pub fn status_code(&self) -> Option<StatusCode> {
         match &self.kind {
             EventSourceErrorKind::InvalidStatusCode { status, .. }
@@ -277,6 +289,7 @@ impl EventSourceError {
         }
     }
 
+    /// Gets a reference to the underlying response if this error was caused by an invalid [`Response`]
     pub fn response(&self) -> Option<&Response> {
         match &self.kind {
             EventSourceErrorKind::InvalidStatusCode { response, .. }
@@ -286,6 +299,7 @@ impl EventSourceError {
         }
     }
 
+    /// If this error comes from a [`Response`], return the raw response, collected status code and the [Content-Type][CONTENT_TYPE] header if it has been extracted already
     pub fn into_response_err(self) -> Option<(Response, StatusCode, Option<HeaderValue>)> {
         match self.kind {
             EventSourceErrorKind::InvalidStatusCode { response, status } => {
@@ -298,6 +312,11 @@ impl EventSourceError {
             } => Some((*response, status, Some(content_type))),
             _ => None,
         }
+    }
+
+    /// Is this error because the stream has stopped?
+    pub fn is_stream_ended(&self) -> bool {
+        matches!(self.kind, EventSourceErrorKind::StreamEnded)
     }
 }
 

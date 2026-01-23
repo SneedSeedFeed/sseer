@@ -1,3 +1,5 @@
+//! UTF-8 agnostic parser implementation for SSE
+
 use core::str::Utf8Error;
 
 use bytes::{Buf, Bytes, BytesMut};
@@ -5,6 +7,7 @@ use bytes_utils::Str;
 
 use crate::constants::{CR, LF};
 
+/// A full line from an SSE stream
 #[derive(Debug, Clone, Copy)]
 pub enum RawEventLine<'a> {
     Comment, // we choose to ignore this since the OG code never uses it anyways
@@ -15,6 +18,7 @@ pub enum RawEventLine<'a> {
     Empty,
 }
 
+/// Full line from an SSE stream, owned version of [RawEventLine]. Note: You probably want to [RawEventLineOwned::validate] these into [ValidatedEventLine]s
 #[derive(Debug, Clone)]
 pub enum RawEventLineOwned {
     Comment,
@@ -25,6 +29,7 @@ pub enum RawEventLineOwned {
     },
 }
 
+/// Valid field names according to [html.spec.whatwg.org](https://html.spec.whatwg.org/multipage/server-sent-events.html#event-stream-interpretation), invalid field names are thrown away into [FieldName::Ignored]
 #[derive(Debug, Clone, Copy)]
 pub enum FieldName {
     Event,
@@ -34,6 +39,7 @@ pub enum FieldName {
     Ignored,
 }
 
+/// Completely parsed SSE event line
 #[derive(Debug, Clone)]
 pub enum ValidatedEventLine {
     Comment,
@@ -144,6 +150,7 @@ fn read_line(bytes: &[u8]) -> RawEventLine<'_> {
     }
 }
 
+/// Tries to read the next [RawEventLine] from `bytes`. Returns [None] if `bytes` contains no complete EOL, this includes a slice ending in just [CR] as we are not yet sure if it's crlf or just a lone cr.
 pub fn parse_line(bytes: &[u8]) -> Option<(RawEventLine<'_>, &[u8])> {
     let (line_to_read, next) = split_at_next_eol(bytes)?;
     Some((read_line(line_to_read), next))

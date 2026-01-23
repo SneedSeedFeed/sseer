@@ -1,24 +1,22 @@
+//! [`Error`][core::error::Error] implementations used across the crate
+
 use core::{
     fmt::{Display, Formatter},
     str::Utf8Error,
 };
 
-#[derive(Debug, Clone, Copy, Default)]
-pub struct CantCloneError;
-
-impl Display for CantCloneError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
-        "cannot clone request".fmt(f)
-    }
-}
-
-impl core::error::Error for CantCloneError {}
+#[cfg(feature = "reqwest")]
+pub mod reqwest;
+#[cfg(feature = "reqwest")]
+pub use reqwest::CantCloneError;
 
 macro_rules! impl_samey_error {
     ($vis:vis enum $name:ident) => {
         #[derive(Debug, PartialEq)]
         $vis enum $name<E> {
+            /// Something went wrong with the underlying stream
             Transport(E),
+            /// The stream had invalid utf8
             Utf8Error(Utf8Error),
         }
 

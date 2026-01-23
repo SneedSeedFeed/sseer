@@ -1,3 +1,5 @@
+//! [`Stream`][futures_core::Stream] that converts a stream of [`Bytes`][bytes::Bytes] into [`Event`][crate::event::Event]s
+
 use core::{
     pin::Pin,
     task::{Context, Poll, ready},
@@ -116,6 +118,7 @@ impl EventBuilder {
             return None;
         }
 
+        // We know the buffer has at least 1 byte so we can grab the last one and check it
         if *data_buffer.as_bytes().last().unwrap() == LF {
             // This should basically be a no-op as I'm just pulling it out of the wrapper, mutating then shoving it back in again
             let mut buf = data_buffer.into_inner();
@@ -155,6 +158,8 @@ impl EventStreamState {
 }
 
 pin_project_lite::pin_project! {
+
+    /// [`Stream`][futures_core::Stream] that converts a stream of [`Bytes`][bytes::Bytes] into [`Event`][crate::event::Event]s
     #[project = EventStreamProjection]
     pub struct EventStream<S> {
         #[pin]
@@ -167,6 +172,7 @@ pin_project_lite::pin_project! {
 }
 
 impl<S> EventStream<S> {
+    /// Create a new [EventStream] from a stream
     pub fn new(stream: S) -> Self {
         Self {
             stream,
@@ -177,12 +183,19 @@ impl<S> EventStream<S> {
         }
     }
 
+    /// Set the last event id, useful for resumability
     pub fn set_last_event_id(&mut self, id: impl Into<Str>) {
         self.last_event_id = id.into()
     }
 
+    /// Reference to the last event id given out by this stream
     pub fn last_event_id(&self) -> &Str {
         &self.last_event_id
+    }
+
+    /// Take the current buffer from the [EventStream], useful if you want to check for leftovers
+    pub fn take_buffer(self) -> BytesMut {
+        self.buffer
     }
 }
 
