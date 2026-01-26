@@ -41,6 +41,7 @@ impl From<Event> for StreamEvent {
 
 pin_project! {
     #[project = EventSourceProjection]
+    #[derive(Debug)]
     pub struct EventSource<R> {
         builder: RequestBuilder,
         #[pin]
@@ -70,6 +71,37 @@ pin_project! {
             retry_state: Option<(usize, Duration)>,
         },
         Closed,
+    }
+}
+
+impl std::fmt::Debug for ConnectionState {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Connecting { retry_state, .. } => f
+                .debug_struct("Connecting")
+                .field("future", &"future")
+                .field("retry_state", retry_state)
+                .finish(),
+            Self::Retrying {
+                delay,
+                attempt_number,
+                delay_duration,
+            } => f
+                .debug_struct("Retrying")
+                .field("delay", delay)
+                .field("attempt_number", attempt_number)
+                .field("delay_duration", delay_duration)
+                .finish(),
+            Self::Open {
+                stream,
+                retry_state,
+            } => f
+                .debug_struct("Open")
+                .field("stream", stream)
+                .field("retry_state", retry_state)
+                .finish(),
+            Self::Closed => write!(f, "Closed"),
+        }
     }
 }
 

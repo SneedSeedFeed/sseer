@@ -161,6 +161,7 @@ pin_project_lite::pin_project! {
 
     /// [`Stream`][futures_core::Stream] that converts a stream of [`Bytes`][bytes::Bytes] into [`Event`][crate::event::Event]s
     #[project = EventStreamProjection]
+    #[derive(Debug)]
     pub struct EventStream<S> {
         #[pin]
         stream: S,
