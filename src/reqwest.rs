@@ -271,6 +271,8 @@ impl Display for EventSourceError {
     }
 }
 
+impl std::error::Error for EventSourceError {}
+
 impl EventSourceError {
     fn new(
         kind: impl Into<EventSourceErrorKind>,

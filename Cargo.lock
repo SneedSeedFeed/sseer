@@ -632,7 +632,7 @@ dependencies = [
 
 [[package]]
 name = "sseer"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "bytes",
  "bytes-utils",
