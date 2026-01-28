@@ -26,7 +26,8 @@ struct EventBuilder {
     is_complete: bool,
 }
 
-// this is an optimisation over using just a StrMut buffer. like 99% of the time we are just gonna have a single data line which also
+// this is an optimisation over using just a StrMut buffer. like 99% of the time we are just gonna have a single data line so we should just take that as the buffer's value and never add the linefeed at all
+// if we get more data lines then we pay the allocation cost and lose out
 #[derive(Debug, Default, Clone)]
 enum EventBuilderDataBuffer {
     #[default]
@@ -232,6 +233,33 @@ impl<S> EventStream<S> {
     }
 }
 
+const fn starts_with_bom(buf: &[u8]) -> Option<bool> {
+    match buf.len() {
+        0 => None,
+        1 => {
+            if buf[0] == BOM[0] {
+                None
+            } else {
+                Some(false)
+            }
+        }
+        2 => {
+            if buf[0] == BOM[0] && buf[1] == BOM[1] {
+                None
+            } else {
+                Some(false)
+            }
+        }
+        _gte_3 => {
+            if buf[0] == BOM[0] && buf[1] == BOM[1] && buf[2] == BOM[2] {
+                Some(true)
+            } else {
+                Some(false)
+            }
+        }
+    }
+}
+
 fn parse_event<E>(
     buffer: &mut BytesMut,
     builder: &mut EventBuilder,
@@ -262,12 +290,6 @@ macro_rules! try_parse_event_buffer {
     ($this:ident) => {
         match parse_event($this.buffer, $this.builder) {
             Ok(Some(event)) => {
-
-                // This covers for a bug where (in theory) if the first bytes we get from a stream are ":\n" followed by another starting with the BOM, we could parse the first complete line, not say we started then strip a BOM mark
-                if $this.state.is_not_started() {
-                    *$this.state = EventStreamState::Started;
-                }
-
                 *$this.last_event_id = event.id.clone();
                 return Poll::Ready(Some(Ok(event)));
             }
@@ -328,13 +350,14 @@ where
             this.buffer.extend_from_slice(new_bytes);
             // more robust BOM check than the OG
             if this.state.is_not_started() {
-                // check if buffer has enough length to BOM check
-                if this.buffer.len() >= BOM.len() {
-                    *this.state = EventStreamState::Started;
-                    if this.buffer.starts_with(BOM) {
-                        // advance past BOM
+                // check if buffer is utf8 bom or not
+                match starts_with_bom(this.buffer) {
+                    Some(true) => {
+                        *this.state = EventStreamState::Started;
                         this.buffer.advance(BOM.len());
                     }
+                    Some(false) => *this.state = EventStreamState::Started,
+                    None => continue,
                 }
             };
 
