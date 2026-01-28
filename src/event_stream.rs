@@ -26,6 +26,7 @@ struct EventBuilder {
     is_complete: bool,
 }
 
+// this is an optimisation over using just a StrMut buffer. like 99% of the time we are just gonna have a single data line which also
 #[derive(Debug, Default, Clone)]
 enum EventBuilderDataBuffer {
     #[default]
@@ -64,11 +65,7 @@ impl EventBuilderDataBuffer {
     }
 
     fn is_empty(&self) -> bool {
-        match self {
-            EventBuilderDataBuffer::Uninit => true,
-            EventBuilderDataBuffer::Immutable(str_inner) => str_inner.is_empty(),
-            EventBuilderDataBuffer::Mutable(str_inner) => str_inner.is_empty(),
-        }
+        matches!(self, EventBuilderDataBuffer::Uninit)
     }
 }
 
@@ -98,9 +95,8 @@ impl EventBuilder {
                 field_name: FieldName::Data,
                 field_value,
             } => {
-                if let Some(field_value) = field_value {
-                    self.data_buffer.push_str(field_value)
-                }
+                let field_value = field_value.unwrap_or(EMPTY_STR);
+                self.data_buffer.push_str(field_value)
             }
             ValidatedEventLine::Field {
                 field_name: FieldName::Id,
