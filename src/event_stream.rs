@@ -21,9 +21,55 @@ use crate::{
 struct EventBuilder {
     event: Str,
     id: Str,
-    data_buffer: StrMut,
+    data_buffer: EventBuilderDataBuffer,
     retry: Option<Duration>,
     is_complete: bool,
+}
+
+#[derive(Debug, Default, Clone)]
+enum EventBuilderDataBuffer {
+    #[default]
+    Uninit,
+    Immutable(Str),
+    Mutable(StrMut),
+}
+
+impl EventBuilderDataBuffer {
+    fn freeze(self) -> Str {
+        match self {
+            EventBuilderDataBuffer::Uninit => EMPTY_STR,
+            EventBuilderDataBuffer::Immutable(str) => str,
+            EventBuilderDataBuffer::Mutable(str_mut) => str_mut.freeze(),
+        }
+    }
+
+    fn push_str(&mut self, str: Str) {
+        match self {
+            EventBuilderDataBuffer::Uninit => *self = EventBuilderDataBuffer::Immutable(str),
+            EventBuilderDataBuffer::Immutable(immutable_buf) => {
+                let len = immutable_buf.len() + str.len();
+                let inner = BytesMut::with_capacity(len);
+                // Safety: The buffer is empty, there is no bytes to be invalid
+                let mut buf = unsafe { StrMut::from_inner_unchecked(inner) };
+                buf.push_str(immutable_buf);
+                buf.push('\n');
+                buf.push_str(&str);
+                *self = EventBuilderDataBuffer::Mutable(buf)
+            }
+            EventBuilderDataBuffer::Mutable(mutable_buf) => {
+                mutable_buf.push('\n');
+                mutable_buf.push_str(&str)
+            }
+        }
+    }
+
+    fn is_empty(&self) -> bool {
+        match self {
+            EventBuilderDataBuffer::Uninit => true,
+            EventBuilderDataBuffer::Immutable(str_inner) => str_inner.is_empty(),
+            EventBuilderDataBuffer::Mutable(str_inner) => str_inner.is_empty(),
+        }
+    }
 }
 
 impl Default for EventBuilder {
@@ -31,7 +77,7 @@ impl Default for EventBuilder {
         Self {
             event: EMPTY_STR,
             id: EMPTY_STR,
-            data_buffer: StrMut::new(),
+            data_buffer: EventBuilderDataBuffer::default(),
             retry: None,
             is_complete: false,
         }
@@ -53,9 +99,8 @@ impl EventBuilder {
                 field_value,
             } => {
                 if let Some(field_value) = field_value {
-                    self.data_buffer.push_str(&field_value);
+                    self.data_buffer.push_str(field_value)
                 }
-                self.data_buffer.push('\n')
             }
             ValidatedEventLine::Field {
                 field_name: FieldName::Id,
@@ -107,7 +152,7 @@ impl EventBuilder {
         let EventBuilder {
             mut event,
             id,
-            mut data_buffer,
+            data_buffer,
             retry,
             ..
         } = core::mem::take(self);
@@ -117,15 +162,6 @@ impl EventBuilder {
         if data_buffer.is_empty() {
             return None;
         }
-
-        // We know the buffer has at least 1 byte so we can grab the last one and check it
-        if *data_buffer.as_bytes().last().unwrap() == LF {
-            // This should basically be a no-op as I'm just pulling it out of the wrapper, mutating then shoving it back in again
-            let mut buf = data_buffer.into_inner();
-            buf.truncate(buf.len() - 1);
-            // Safety: we just removed the final byte, which is known to be LF and thus can't be part of another utf-8 codepoint
-            data_buffer = unsafe { StrMut::from_inner_unchecked(buf) };
-        };
 
         if event.is_empty() {
             event = MESSAGE_STR;
