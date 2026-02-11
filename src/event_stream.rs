@@ -21,9 +21,53 @@ use crate::{
 struct EventBuilder {
     event: Str,
     id: Str,
-    data_buffer: StrMut,
+    data_buffer: EventBuilderDataBuffer,
     retry: Option<Duration>,
     is_complete: bool,
+}
+
+// this is an optimisation over using just a StrMut buffer. like 99% of the time we are just gonna have a single data line so we should just take that as the buffer's value and never add the linefeed at all
+// if we get more data lines then we pay the allocation cost and lose out
+#[derive(Debug, Default, Clone)]
+enum EventBuilderDataBuffer {
+    #[default]
+    Uninit,
+    Immutable(Str),
+    Mutable(StrMut),
+}
+
+impl EventBuilderDataBuffer {
+    fn freeze(self) -> Str {
+        match self {
+            EventBuilderDataBuffer::Uninit => EMPTY_STR,
+            EventBuilderDataBuffer::Immutable(str) => str,
+            EventBuilderDataBuffer::Mutable(str_mut) => str_mut.freeze(),
+        }
+    }
+
+    fn push_str(&mut self, str: Str) {
+        match self {
+            EventBuilderDataBuffer::Uninit => *self = EventBuilderDataBuffer::Immutable(str),
+            EventBuilderDataBuffer::Immutable(immutable_buf) => {
+                let len = immutable_buf.len() + str.len();
+                let inner = BytesMut::with_capacity(len);
+                // Safety: The buffer is empty, there is no bytes to be invalid
+                let mut buf = unsafe { StrMut::from_inner_unchecked(inner) };
+                buf.push_str(immutable_buf);
+                buf.push('\n');
+                buf.push_str(&str);
+                *self = EventBuilderDataBuffer::Mutable(buf)
+            }
+            EventBuilderDataBuffer::Mutable(mutable_buf) => {
+                mutable_buf.push('\n');
+                mutable_buf.push_str(&str)
+            }
+        }
+    }
+
+    fn is_empty(&self) -> bool {
+        matches!(self, EventBuilderDataBuffer::Uninit)
+    }
 }
 
 impl Default for EventBuilder {
@@ -31,7 +75,7 @@ impl Default for EventBuilder {
         Self {
             event: EMPTY_STR,
             id: EMPTY_STR,
-            data_buffer: StrMut::new(),
+            data_buffer: EventBuilderDataBuffer::default(),
             retry: None,
             is_complete: false,
         }
@@ -52,10 +96,8 @@ impl EventBuilder {
                 field_name: FieldName::Data,
                 field_value,
             } => {
-                if let Some(field_value) = field_value {
-                    self.data_buffer.push_str(&field_value);
-                }
-                self.data_buffer.push('\n')
+                let field_value = field_value.unwrap_or(EMPTY_STR);
+                self.data_buffer.push_str(field_value)
             }
             ValidatedEventLine::Field {
                 field_name: FieldName::Id,
@@ -107,7 +149,7 @@ impl EventBuilder {
         let EventBuilder {
             mut event,
             id,
-            mut data_buffer,
+            data_buffer,
             retry,
             ..
         } = core::mem::take(self);
@@ -117,15 +159,6 @@ impl EventBuilder {
         if data_buffer.is_empty() {
             return None;
         }
-
-        // We know the buffer has at least 1 byte so we can grab the last one and check it
-        if *data_buffer.as_bytes().last().unwrap() == LF {
-            // This should basically be a no-op as I'm just pulling it out of the wrapper, mutating then shoving it back in again
-            let mut buf = data_buffer.into_inner();
-            buf.truncate(buf.len() - 1);
-            // Safety: we just removed the final byte, which is known to be LF and thus can't be part of another utf-8 codepoint
-            data_buffer = unsafe { StrMut::from_inner_unchecked(buf) };
-        };
 
         if event.is_empty() {
             event = MESSAGE_STR;
@@ -161,6 +194,7 @@ pin_project_lite::pin_project! {
 
     /// [`Stream`][futures_core::Stream] that converts a stream of [`Bytes`][bytes::Bytes] into [`Event`][crate::event::Event]s
     #[project = EventStreamProjection]
+    #[derive(Debug)]
     pub struct EventStream<S> {
         #[pin]
         stream: S,
@@ -199,6 +233,33 @@ impl<S> EventStream<S> {
     }
 }
 
+const fn starts_with_bom(buf: &[u8]) -> Option<bool> {
+    match buf.len() {
+        0 => None,
+        1 => {
+            if buf[0] == BOM[0] {
+                None
+            } else {
+                Some(false)
+            }
+        }
+        2 => {
+            if buf[0] == BOM[0] && buf[1] == BOM[1] {
+                None
+            } else {
+                Some(false)
+            }
+        }
+        _gte_3 => {
+            if buf[0] == BOM[0] && buf[1] == BOM[1] && buf[2] == BOM[2] {
+                Some(true)
+            } else {
+                Some(false)
+            }
+        }
+    }
+}
+
 fn parse_event<E>(
     buffer: &mut BytesMut,
     builder: &mut EventBuilder,
@@ -229,12 +290,6 @@ macro_rules! try_parse_event_buffer {
     ($this:ident) => {
         match parse_event($this.buffer, $this.builder) {
             Ok(Some(event)) => {
-
-                // This covers for a bug where (in theory) if the first bytes we get from a stream are ":\n" followed by another starting with the BOM, we could parse the first complete line, not say we started then strip a BOM mark
-                if $this.state.is_not_started() {
-                    *$this.state = EventStreamState::Started;
-                }
-
                 *$this.last_event_id = event.id.clone();
                 return Poll::Ready(Some(Ok(event)));
             }
@@ -295,13 +350,14 @@ where
             this.buffer.extend_from_slice(new_bytes);
             // more robust BOM check than the OG
             if this.state.is_not_started() {
-                // check if buffer has enough length to BOM check
-                if this.buffer.len() >= BOM.len() {
-                    *this.state = EventStreamState::Started;
-                    if this.buffer.starts_with(BOM) {
-                        // advance past BOM
+                // check if buffer is utf8 bom or not
+                match starts_with_bom(this.buffer) {
+                    Some(true) => {
+                        *this.state = EventStreamState::Started;
                         this.buffer.advance(BOM.len());
                     }
+                    Some(false) => *this.state = EventStreamState::Started,
+                    None => continue,
                 }
             };
 
