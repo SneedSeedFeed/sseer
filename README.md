@@ -26,7 +26,7 @@ Yes, without the `reqwest` feature it's all no_std.
 ## Benches
 Benches were run on my personal computer with 96GB of 6000Mhz DDR5 + Ryzen 9 9950X3D.
 
-# parse_line
+### parse_line
 For these benches we just run the parser on a single line of different types. The main difference we get is on long lines such as the "big 1024-byte line" benchmark, since we use `memchr` instead of `nom` for the parser any benchmarks involving long lines are weighted in our favour.
 
 | Line type | sseer | eventsource-stream | ratio |
@@ -40,7 +40,7 @@ For these benches we just run the parser on a single line of different types. Th
 | no space | 6.8ns | 22.5ns | **3.3x** |
 | big 1024-byte line | 11.3ns | 761.6ns | **67x** |
 
-# event_stream
+### event_stream
 These benchmarks run the full stream implementation across some events split into 128 byte chunks that ignore line boundaries.
 - mixed is just a sort of random mixed set of different line types, with no particularly long data lines. 512 events.
 - ai_stream has its line lengths and ratios based on some responses I captured from OpenRouter, so is almost entirely made of data lines with some being quite long and some quite short. 512 events.
@@ -52,7 +52,7 @@ These benchmarks run the full stream implementation across some events split int
 | ai_stream | 79.6µs | 344.7µs | **4.3x** |
 | evenish_distribution | 37.1µs | 56.3µs | **1.5x** |
 
-# Memory (512 events, 128-byte chunks)
+### Memory (512 events, 128-byte chunks)
 This is available under the example with `cargo run --example memory_usage`. I just use a global allocator that tracks calls to alloc and stores some stats, it's probably not perfectly accurate but hopefully it lets you get the gist. The main advantage `sseer` has over `eventsource-stream` is that we use `bytes::Bytes` as much as possible to reduce allocation, and we also avoid allocating a buffer for the data line in cases where there's only one data line.
 
 | Workload | Metric | sseer | eventsource-stream | ratio |
