@@ -1,0 +1,1024 @@
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 0aaaaaaaaaaaaaaa","sequence_number":0}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 1aaaaaaaaaaaaaaa","sequence_number":1}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 2aaaaaaaaaaaaaaa","sequence_number":2}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 3","sequ
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 4aaaaaaaaaaaaaaa","sequence_number":4}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 5aaaaaaaaaaaaaaa","sequence_number":5}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 6aaaaaaaaaaaaaaa","sequence_number":6}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 7","sequ
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 8aaaaaaaaaaaaaaa","sequence_number":8}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 9aaaaaaaaaaaaaaa","sequence_number":9}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 10aaaaaaaaaaaaa","sequence_number":10}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 11","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 12aaaaaaaaaaaaa","sequence_number":12}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 13aaaaaaaaaaaaa","sequence_number":13}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 14aaaaaaaaaaaaa","sequence_number":14}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 15","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 16aaaaaaaaaaaaa","sequence_number":16}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 17aaaaaaaaaaaaa","sequence_number":17}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 18aaaaaaaaaaaaa","sequence_number":18}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 19","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 20aaaaaaaaaaaaa","sequence_number":20}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 21aaaaaaaaaaaaa","sequence_number":21}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 22aaaaaaaaaaaaa","sequence_number":22}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 23","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 24aaaaaaaaaaaaa","sequence_number":24}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 25aaaaaaaaaaaaa","sequence_number":25}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 26aaaaaaaaaaaaa","sequence_number":26}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 27","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 28aaaaaaaaaaaaa","sequence_number":28}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 29aaaaaaaaaaaaa","sequence_number":29}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 30aaaaaaaaaaaaa","sequence_number":30}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 31","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 32aaaaaaaaaaaaa","sequence_number":32}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 33aaaaaaaaaaaaa","sequence_number":33}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 34aaaaaaaaaaaaa","sequence_number":34}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 35","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 36aaaaaaaaaaaaa","sequence_number":36}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 37aaaaaaaaaaaaa","sequence_number":37}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 38aaaaaaaaaaaaa","sequence_number":38}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 39","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 40aaaaaaaaaaaaa","sequence_number":40}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 41aaaaaaaaaaaaa","sequence_number":41}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 42aaaaaaaaaaaaa","sequence_number":42}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 43","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 44aaaaaaaaaaaaa","sequence_number":44}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 45aaaaaaaaaaaaa","sequence_number":45}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 46aaaaaaaaaaaaa","sequence_number":46}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 47","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 48aaaaaaaaaaaaa","sequence_number":48}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 49aaaaaaaaaaaaa","sequence_number":49}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 50aaaaaaaaaaaaa","sequence_number":50}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 51","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 52aaaaaaaaaaaaa","sequence_number":52}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 53aaaaaaaaaaaaa","sequence_number":53}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 54aaaaaaaaaaaaa","sequence_number":54}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 55","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 56aaaaaaaaaaaaa","sequence_number":56}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 57aaaaaaaaaaaaa","sequence_number":57}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 58aaaaaaaaaaaaa","sequence_number":58}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 59","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 60aaaaaaaaaaaaa","sequence_number":60}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 61aaaaaaaaaaaaa","sequence_number":61}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 62aaaaaaaaaaaaa","sequence_number":62}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 63","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 64aaaaaaaaaaaaa","sequence_number":64}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 65aaaaaaaaaaaaa","sequence_number":65}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 66aaaaaaaaaaaaa","sequence_number":66}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 67","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 68aaaaaaaaaaaaa","sequence_number":68}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 69aaaaaaaaaaaaa","sequence_number":69}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 70aaaaaaaaaaaaa","sequence_number":70}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 71","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 72aaaaaaaaaaaaa","sequence_number":72}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 73aaaaaaaaaaaaa","sequence_number":73}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 74aaaaaaaaaaaaa","sequence_number":74}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 75","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 76aaaaaaaaaaaaa","sequence_number":76}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 77aaaaaaaaaaaaa","sequence_number":77}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 78aaaaaaaaaaaaa","sequence_number":78}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 79","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 80aaaaaaaaaaaaa","sequence_number":80}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 81aaaaaaaaaaaaa","sequence_number":81}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 82aaaaaaaaaaaaa","sequence_number":82}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 83","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 84aaaaaaaaaaaaa","sequence_number":84}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 85aaaaaaaaaaaaa","sequence_number":85}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 86aaaaaaaaaaaaa","sequence_number":86}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 87","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 88aaaaaaaaaaaaa","sequence_number":88}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 89aaaaaaaaaaaaa","sequence_number":89}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 90aaaaaaaaaaaaa","sequence_number":90}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 91","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 92aaaaaaaaaaaaa","sequence_number":92}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 93aaaaaaaaaaaaa","sequence_number":93}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 94aaaaaaaaaaaaa","sequence_number":94}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 95","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 96aaaaaaaaaaaaa","sequence_number":96}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 97aaaaaaaaaaaaa","sequence_number":97}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 98aaaaaaaaaaaaa","sequence_number":98}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 99","seq
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 100aaaaaaaaaaa","sequence_number":100}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 101aaaaaaaaaaa","sequence_number":101}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 102aaaaaaaaaaa","sequence_number":102}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 103","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 104aaaaaaaaaaa","sequence_number":104}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 105aaaaaaaaaaa","sequence_number":105}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 106aaaaaaaaaaa","sequence_number":106}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 107","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 108aaaaaaaaaaa","sequence_number":108}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 109aaaaaaaaaaa","sequence_number":109}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 110aaaaaaaaaaa","sequence_number":110}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 111","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 112aaaaaaaaaaa","sequence_number":112}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 113aaaaaaaaaaa","sequence_number":113}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 114aaaaaaaaaaa","sequence_number":114}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 115","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 116aaaaaaaaaaa","sequence_number":116}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 117aaaaaaaaaaa","sequence_number":117}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 118aaaaaaaaaaa","sequence_number":118}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 119","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 120aaaaaaaaaaa","sequence_number":120}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 121aaaaaaaaaaa","sequence_number":121}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 122aaaaaaaaaaa","sequence_number":122}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 123","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 124aaaaaaaaaaa","sequence_number":124}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 125aaaaaaaaaaa","sequence_number":125}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 126aaaaaaaaaaa","sequence_number":126}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 127","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 128aaaaaaaaaaa","sequence_number":128}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 129aaaaaaaaaaa","sequence_number":129}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 130aaaaaaaaaaa","sequence_number":130}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 131","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 132aaaaaaaaaaa","sequence_number":132}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 133aaaaaaaaaaa","sequence_number":133}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 134aaaaaaaaaaa","sequence_number":134}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 135","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 136aaaaaaaaaaa","sequence_number":136}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 137aaaaaaaaaaa","sequence_number":137}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 138aaaaaaaaaaa","sequence_number":138}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 139","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 140aaaaaaaaaaa","sequence_number":140}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 141aaaaaaaaaaa","sequence_number":141}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 142aaaaaaaaaaa","sequence_number":142}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 143","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 144aaaaaaaaaaa","sequence_number":144}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 145aaaaaaaaaaa","sequence_number":145}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 146aaaaaaaaaaa","sequence_number":146}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 147","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 148aaaaaaaaaaa","sequence_number":148}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 149aaaaaaaaaaa","sequence_number":149}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 150aaaaaaaaaaa","sequence_number":150}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 151","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 152aaaaaaaaaaa","sequence_number":152}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 153aaaaaaaaaaa","sequence_number":153}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 154aaaaaaaaaaa","sequence_number":154}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 155","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 156aaaaaaaaaaa","sequence_number":156}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 157aaaaaaaaaaa","sequence_number":157}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 158aaaaaaaaaaa","sequence_number":158}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 159","se
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 160aaaaaaaaaaa","sequence_number":160}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 161aaaaaaaaaaa","sequence_number":161}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 162aaaaaaaaaaa","sequence_number":162}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 163aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":163}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 164aaaaaaaaaaa","sequence_number":164}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 165aaaaaaaaaaa","sequence_number":165}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 166aaaaaaaaaaa","sequence_number":166}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 167aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":167}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 168aaaaaaaaaaa","sequence_number":168}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 169aaaaaaaaaaa","sequence_number":169}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 170aaaaaaaaaaa","sequence_number":170}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 171aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":171}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 172aaaaaaaaaaa","sequence_number":172}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 173aaaaaaaaaaa","sequence_number":173}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 174aaaaaaaaaaa","sequence_number":174}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 175aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":175}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 176aaaaaaaaaaa","sequence_number":176}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 177aaaaaaaaaaa","sequence_number":177}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 178aaaaaaaaaaa","sequence_number":178}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 179aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":179}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 180aaaaaaaaaaa","sequence_number":180}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 181aaaaaaaaaaa","sequence_number":181}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 182aaaaaaaaaaa","sequence_number":182}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 183aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":183}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 184aaaaaaaaaaa","sequence_number":184}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 185aaaaaaaaaaa","sequence_number":185}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 186aaaaaaaaaaa","sequence_number":186}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 187aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":187}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 188aaaaaaaaaaa","sequence_number":188}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 189aaaaaaaaaaa","sequence_number":189}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 190aaaaaaaaaaa","sequence_number":190}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 191aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":191}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 192aaaaaaaaaaa","sequence_number":192}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 193aaaaaaaaaaa","sequence_number":193}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 194aaaaaaaaaaa","sequence_number":194}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 195aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":195}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 196aaaaaaaaaaa","sequence_number":196}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 197aaaaaaaaaaa","sequence_number":197}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 198aaaaaaaaaaa","sequence_number":198}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 199aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":199}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 200aaaaaaaaaaa","sequence_number":200}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 201aaaaaaaaaaa","sequence_number":201}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 202aaaaaaaaaaa","sequence_number":202}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 203aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":203}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 204aaaaaaaaaaa","sequence_number":204}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 205aaaaaaaaaaa","sequence_number":205}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 206aaaaaaaaaaa","sequence_number":206}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 207aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":207}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 208aaaaaaaaaaa","sequence_number":208}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 209aaaaaaaaaaa","sequence_number":209}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 210aaaaaaaaaaa","sequence_number":210}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 211aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":211}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 212aaaaaaaaaaa","sequence_number":212}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 213aaaaaaaaaaa","sequence_number":213}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 214aaaaaaaaaaa","sequence_number":214}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 215aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":215}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 216aaaaaaaaaaa","sequence_number":216}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 217aaaaaaaaaaa","sequence_number":217}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 218aaaaaaaaaaa","sequence_number":218}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 219aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":219}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 220aaaaaaaaaaa","sequence_number":220}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 221aaaaaaaaaaa","sequence_number":221}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 222aaaaaaaaaaa","sequence_number":222}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 223aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":223}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 224aaaaaaaaaaa","sequence_number":224}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 225aaaaaaaaaaa","sequence_number":225}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 226aaaaaaaaaaa","sequence_number":226}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 227aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":227}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 228aaaaaaaaaaa","sequence_number":228}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 229aaaaaaaaaaa","sequence_number":229}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 230aaaaaaaaaaa","sequence_number":230}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 231aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":231}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 232aaaaaaaaaaa","sequence_number":232}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 233aaaaaaaaaaa","sequence_number":233}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 234aaaaaaaaaaa","sequence_number":234}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 235aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":235}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 236aaaaaaaaaaa","sequence_number":236}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 237aaaaaaaaaaa","sequence_number":237}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 238aaaaaaaaaaa","sequence_number":238}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 239aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":239}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 240aaaaaaaaaaa","sequence_number":240}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 241aaaaaaaaaaa","sequence_number":241}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 242aaaaaaaaaaa","sequence_number":242}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 243aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":243}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 244aaaaaaaaaaa","sequence_number":244}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 245aaaaaaaaaaa","sequence_number":245}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 246aaaaaaaaaaa","sequence_number":246}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 247aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":247}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 248aaaaaaaaaaa","sequence_number":248}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 249aaaaaaaaaaa","sequence_number":249}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 250aaaaaaaaaaa","sequence_number":250}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 251aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":251}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 252aaaaaaaaaaa","sequence_number":252}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 253aaaaaaaaaaa","sequence_number":253}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 254aaaaaaaaaaa","sequence_number":254}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 255aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":255}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 256aaaaaaaaaaa","sequence_number":256}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 257aaaaaaaaaaa","sequence_number":257}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 258aaaaaaaaaaa","sequence_number":258}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 259aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":259}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 260aaaaaaaaaaa","sequence_number":260}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 261aaaaaaaaaaa","sequence_number":261}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 262aaaaaaaaaaa","sequence_number":262}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 263aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":263}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 264aaaaaaaaaaa","sequence_number":264}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 265aaaaaaaaaaa","sequence_number":265}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 266aaaaaaaaaaa","sequence_number":266}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 267aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":267}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 268aaaaaaaaaaa","sequence_number":268}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 269aaaaaaaaaaa","sequence_number":269}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 270aaaaaaaaaaa","sequence_number":270}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 271aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":271}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 272aaaaaaaaaaa","sequence_number":272}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 273aaaaaaaaaaa","sequence_number":273}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 274aaaaaaaaaaa","sequence_number":274}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 275aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":275}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 276aaaaaaaaaaa","sequence_number":276}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 277aaaaaaaaaaa","sequence_number":277}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 278aaaaaaaaaaa","sequence_number":278}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 279aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":279}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 280aaaaaaaaaaa","sequence_number":280}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 281aaaaaaaaaaa","sequence_number":281}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 282aaaaaaaaaaa","sequence_number":282}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 283aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":283}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 284aaaaaaaaaaa","sequence_number":284}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 285aaaaaaaaaaa","sequence_number":285}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 286aaaaaaaaaaa","sequence_number":286}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 287aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":287}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 288aaaaaaaaaaa","sequence_number":288}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 289aaaaaaaaaaa","sequence_number":289}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 290aaaaaaaaaaa","sequence_number":290}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 291aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":291}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 292aaaaaaaaaaa","sequence_number":292}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 293aaaaaaaaaaa","sequence_number":293}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 294aaaaaaaaaaa","sequence_number":294}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 295aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":295}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 296aaaaaaaaaaa","sequence_number":296}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 297aaaaaaaaaaa","sequence_number":297}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 298aaaaaaaaaaa","sequence_number":298}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 299aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":299}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 300aaaaaaaaaaa","sequence_number":300}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 301aaaaaaaaaaa","sequence_number":301}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 302aaaaaaaaaaa","sequence_number":302}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 303aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":303}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 304aaaaaaaaaaa","sequence_number":304}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 305aaaaaaaaaaa","sequence_number":305}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 306aaaaaaaaaaa","sequence_number":306}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 307aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":307}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 308aaaaaaaaaaa","sequence_number":308}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 309aaaaaaaaaaa","sequence_number":309}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 310aaaaaaaaaaa","sequence_number":310}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 311aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":311}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 312aaaaaaaaaaa","sequence_number":312}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 313aaaaaaaaaaa","sequence_number":313}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 314aaaaaaaaaaa","sequence_number":314}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 315aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":315}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 316aaaaaaaaaaa","sequence_number":316}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 317aaaaaaaaaaa","sequence_number":317}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 318aaaaaaaaaaa","sequence_number":318}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 319aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","sequence_number":319}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 320aaaaaaaaaaa","sequence_number":320}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 321aaaaaaaaaaa","sequence_number":321}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 322aaaaaaaaaaa","sequence_number":322}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":323}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 324aaaaaaaaaaa","sequence_number":324}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 325aaaaaaaaaaa","sequence_number":325}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 326aaaaaaaaaaa","sequence_number":326}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":327}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 328aaaaaaaaaaa","sequence_number":328}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 329aaaaaaaaaaa","sequence_number":329}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 330aaaaaaaaaaa","sequence_number":330}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":331}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 332aaaaaaaaaaa","sequence_number":332}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 333aaaaaaaaaaa","sequence_number":333}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 334aaaaaaaaaaa","sequence_number":334}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":335}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 336aaaaaaaaaaa","sequence_number":336}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 337aaaaaaaaaaa","sequence_number":337}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 338aaaaaaaaaaa","sequence_number":338}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":339}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 340aaaaaaaaaaa","sequence_number":340}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 341aaaaaaaaaaa","sequence_number":341}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 342aaaaaaaaaaa","sequence_number":342}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":343}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 344aaaaaaaaaaa","sequence_number":344}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 345aaaaaaaaaaa","sequence_number":345}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 346aaaaaaaaaaa","sequence_number":346}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":347}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 348aaaaaaaaaaa","sequence_number":348}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 349aaaaaaaaaaa","sequence_number":349}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 350aaaaaaaaaaa","sequence_number":350}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":351}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 352aaaaaaaaaaa","sequence_number":352}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 353aaaaaaaaaaa","sequence_number":353}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 354aaaaaaaaaaa","sequence_number":354}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":355}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 356aaaaaaaaaaa","sequence_number":356}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 357aaaaaaaaaaa","sequence_number":357}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 358aaaaaaaaaaa","sequence_number":358}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":359}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 360aaaaaaaaaaa","sequence_number":360}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 361aaaaaaaaaaa","sequence_number":361}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 362aaaaaaaaaaa","sequence_number":362}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":363}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 364aaaaaaaaaaa","sequence_number":364}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 365aaaaaaaaaaa","sequence_number":365}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 366aaaaaaaaaaa","sequence_number":366}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":367}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 368aaaaaaaaaaa","sequence_number":368}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 369aaaaaaaaaaa","sequence_number":369}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 370aaaaaaaaaaa","sequence_number":370}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":371}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 372aaaaaaaaaaa","sequence_number":372}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 373aaaaaaaaaaa","sequence_number":373}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 374aaaaaaaaaaa","sequence_number":374}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":375}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 376aaaaaaaaaaa","sequence_number":376}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 377aaaaaaaaaaa","sequence_number":377}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 378aaaaaaaaaaa","sequence_number":378}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":379}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 380aaaaaaaaaaa","sequence_number":380}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 381aaaaaaaaaaa","sequence_number":381}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 382aaaaaaaaaaa","sequence_number":382}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":383}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 384aaaaaaaaaaa","sequence_number":384}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 385aaaaaaaaaaa","sequence_number":385}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 386aaaaaaaaaaa","sequence_number":386}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":387}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 388aaaaaaaaaaa","sequence_number":388}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 389aaaaaaaaaaa","sequence_number":389}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 390aaaaaaaaaaa","sequence_number":390}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":391}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 392aaaaaaaaaaa","sequence_number":392}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 393aaaaaaaaaaa","sequence_number":393}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 394aaaaaaaaaaa","sequence_number":394}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":395}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 396aaaaaaaaaaa","sequence_number":396}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 397aaaaaaaaaaa","sequence_number":397}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 398aaaaaaaaaaa","sequence_number":398}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":399}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 400aaaaaaaaaaa","sequence_number":400}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 401aaaaaaaaaaa","sequence_number":401}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 402aaaaaaaaaaa","sequence_number":402}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":403}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 404aaaaaaaaaaa","sequence_number":404}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 405aaaaaaaaaaa","sequence_number":405}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 406aaaaaaaaaaa","sequence_number":406}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":407}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 408aaaaaaaaaaa","sequence_number":408}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 409aaaaaaaaaaa","sequence_number":409}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 410aaaaaaaaaaa","sequence_number":410}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":411}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 412aaaaaaaaaaa","sequence_number":412}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 413aaaaaaaaaaa","sequence_number":413}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 414aaaaaaaaaaa","sequence_number":414}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":415}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 416aaaaaaaaaaa","sequence_number":416}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 417aaaaaaaaaaa","sequence_number":417}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 418aaaaaaaaaaa","sequence_number":418}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":419}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 420aaaaaaaaaaa","sequence_number":420}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 421aaaaaaaaaaa","sequence_number":421}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 422aaaaaaaaaaa","sequence_number":422}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":423}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 424aaaaaaaaaaa","sequence_number":424}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 425aaaaaaaaaaa","sequence_number":425}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 426aaaaaaaaaaa","sequence_number":426}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":427}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 428aaaaaaaaaaa","sequence_number":428}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 429aaaaaaaaaaa","sequence_number":429}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 430aaaaaaaaaaa","sequence_number":430}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":431}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 432aaaaaaaaaaa","sequence_number":432}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 433aaaaaaaaaaa","sequence_number":433}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 434aaaaaaaaaaa","sequence_number":434}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":435}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 436aaaaaaaaaaa","sequence_number":436}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 437aaaaaaaaaaa","sequence_number":437}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 438aaaaaaaaaaa","sequence_number":438}
+
+data: {"type":"response.output_text.done","item_id":"msg_bench_00001","output_index":0,"content_index":0,"text":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","sequence_number":439}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 440aaaaaaaaaaa","sequence_number":440}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 441aaaaaaaaaaa","sequence_number":441}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 442aaaaaaaaaaa","sequence_number":442}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 443aaaaaaaaaaa","sequence_number":443}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 444aaaaaaaaaaa","sequence_number":444}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 445aaaaaaaaaaa","sequence_number":445}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 446aaaaaaaaaaa","sequence_number":446}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 447aaaaaaaaaaa","sequence_number":447}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 448aaaaaaaaaaa","sequence_number":448}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 449aaaaaaaaaaa","sequence_number":449}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 450aaaaaaaaaaa","sequence_number":450}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 451aaaaaaaaaaa","sequence_number":451}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 452aaaaaaaaaaa","sequence_number":452}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 453aaaaaaaaaaa","sequence_number":453}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 454aaaaaaaaaaa","sequence_number":454}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 455aaaaaaaaaaa","sequence_number":455}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 456aaaaaaaaaaa","sequence_number":456}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 457aaaaaaaaaaa","sequence_number":457}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 458aaaaaaaaaaa","sequence_number":458}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 459aaaaaaaaaaa","sequence_number":459}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 460aaaaaaaaaaa","sequence_number":460}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 461aaaaaaaaaaa","sequence_number":461}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 462aaaaaaaaaaa","sequence_number":462}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 463aaaaaaaaaaa","sequence_number":463}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 464aaaaaaaaaaa","sequence_number":464}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 465aaaaaaaaaaa","sequence_number":465}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 466aaaaaaaaaaa","sequence_number":466}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 467aaaaaaaaaaa","sequence_number":467}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 468aaaaaaaaaaa","sequence_number":468}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 469aaaaaaaaaaa","sequence_number":469}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 470aaaaaaaaaaa","sequence_number":470}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 471aaaaaaaaaaa","sequence_number":471}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 472aaaaaaaaaaa","sequence_number":472}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 473aaaaaaaaaaa","sequence_number":473}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 474aaaaaaaaaaa","sequence_number":474}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 475aaaaaaaaaaa","sequence_number":475}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 476aaaaaaaaaaa","sequence_number":476}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 477aaaaaaaaaaa","sequence_number":477}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 478aaaaaaaaaaa","sequence_number":478}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 479aaaaaaaaaaa","sequence_number":479}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 480aaaaaaaaaaa","sequence_number":480}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 481aaaaaaaaaaa","sequence_number":481}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 482aaaaaaaaaaa","sequence_number":482}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 483aaaaaaaaaaa","sequence_number":483}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 484aaaaaaaaaaa","sequence_number":484}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 485aaaaaaaaaaa","sequence_number":485}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 486aaaaaaaaaaa","sequence_number":486}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 487aaaaaaaaaaa","sequence_number":487}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 488aaaaaaaaaaa","sequence_number":488}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 489aaaaaaaaaaa","sequence_number":489}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 490aaaaaaaaaaa","sequence_number":490}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 491aaaaaaaaaaa","sequence_number":491}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 492aaaaaaaaaaa","sequence_number":492}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 493aaaaaaaaaaa","sequence_number":493}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 494aaaaaaaaaaa","sequence_number":494}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 495aaaaaaaaaaa","sequence_number":495}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 496aaaaaaaaaaa","sequence_number":496}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 497aaaaaaaaaaa","sequence_number":497}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 498aaaaaaaaaaa","sequence_number":498}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 499aaaaaaaaaaa","sequence_number":499}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 500aaaaaaaaaaa","sequence_number":500}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 501aaaaaaaaaaa","sequence_number":501}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 502aaaaaaaaaaa","sequence_number":502}
+
+data: {"type":"response.output_text.delta","output_index":0,"item_id":"msg_bench_00001","content_index":0,"delta":"token 503aaaaaaaaaaa","sequence_number":503}
+
+data: [DONE]
+
+data: [DONE]
+
+data: [DONE]
+
+data: [DONE]
+
+data: [DONE]
+
+data: [DONE]
+
+data: [DONE]
+
+data: [DONE]
+
