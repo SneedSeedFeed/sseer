@@ -164,20 +164,26 @@ pub fn parse_line_from_buffer(buffer: &mut BytesMut) -> Option<RawEventLineOwned
     let line = buffer.split_to(line_end).freeze();
     buffer.advance(rem_start - line_end);
 
-    match read_line(&line) {
-        RawEventLine::Field {
-            field_name,
-            field_value,
-        } => {
-            let field_name = line.slice_ref(field_name);
-            let field_value = field_value.map(|field_value| line.slice_ref(field_value));
+    if line.is_empty() {
+        return Some(RawEventLineOwned::Empty);
+    }
 
+    match memchr::memchr(b':', &line) {
+        Some(0) => Some(RawEventLineOwned::Comment),
+        Some(colon_pos) => {
+            let value_start = if line.get(colon_pos + 1) == Some(&b' ') {
+                colon_pos + 2
+            } else {
+                colon_pos + 1
+            };
             Some(RawEventLineOwned::Field {
-                field_name,
-                field_value,
+                field_name: line.slice(..colon_pos),
+                field_value: Some(line.slice(value_start..)),
             })
         }
-        RawEventLine::Comment => Some(RawEventLineOwned::Comment),
-        RawEventLine::Empty => Some(RawEventLineOwned::Empty),
+        None => Some(RawEventLineOwned::Field {
+            field_name: line,
+            field_value: None,
+        }),
     }
 }

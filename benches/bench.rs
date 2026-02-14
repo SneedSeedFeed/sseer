@@ -7,7 +7,7 @@ use crate::{
         BIG_OLE_DATA_LINE, COMMENT_LINE, DATA_LINE, EMPTY_LINE, EVENT_LINE, ID_LINE, NO_SPACE_LINE,
         NO_VALUE_LINE, generate_one_of_each,
     },
-    event_stream::{load_chunks, run_eventsource_stream, run_sseer},
+    event_stream::{load_chunks, load_line_aligned_chunks, run_eventsource_stream, run_sseer},
 };
 
 // eventsource-stream parser, it isn't public but I wanted to bench against it
@@ -62,19 +62,25 @@ fn bench_event_stream(c: &mut Criterion) {
 
     let evenish_distribution = load_chunks(&generate_one_of_each(128));
 
+    let mixed_aligned = load_line_aligned_chunks(mixed_raw);
+    let ai_line_aligned = load_line_aligned_chunks(ai_raw);
+
     let mut group = c.benchmark_group("event_stream");
 
-    for (name, chunks) in [
-        ("mixed", &mixed_chunks),
-        ("ai_stream", &ai_chunks),
-        ("evenish_distribution", &evenish_distribution),
+    for (name, alignment, chunks) in [
+        ("mixed", "unaligned", &mixed_chunks),
+        ("ai_stream", "unaligned", &ai_chunks),
+        ("evenish_distribution", "unaligned", &evenish_distribution),
+        ("ai_stream", "aligned", &ai_line_aligned),
+        ("mixed", "aligned", &mixed_aligned),
     ] {
-        group.bench_with_input(BenchmarkId::new("sseer", name), chunks, |b, chunks| {
+        let name = format!("{name}_{alignment}");
+        group.bench_with_input(BenchmarkId::new("sseer", &name), chunks, |b, chunks| {
             b.iter(|| run_sseer(chunks));
         });
 
         group.bench_with_input(
-            BenchmarkId::new("eventsource_stream", name),
+            BenchmarkId::new("eventsource_stream", &name),
             chunks,
             |b, chunks| {
                 b.iter(|| run_eventsource_stream(chunks));

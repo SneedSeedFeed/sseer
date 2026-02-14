@@ -50,12 +50,14 @@ impl EventBuilderDataBuffer {
             EventBuilderDataBuffer::Uninit => *self = EventBuilderDataBuffer::Immutable(str),
             EventBuilderDataBuffer::Immutable(immutable_buf) => {
                 let len = immutable_buf.len() + 1 + str.len(); // immutable buf + '\n' + str
-                let inner = BytesMut::with_capacity(len);
-                // Safety: The buffer is empty, there is no bytes to be invalid
-                let mut buf = unsafe { StrMut::from_inner_unchecked(inner) };
-                buf.push_str(immutable_buf);
-                buf.push('\n');
-                buf.push_str(&str);
+                let mut buf = BytesMut::with_capacity(len);
+
+                buf.extend_from_slice(immutable_buf.as_bytes());
+                buf.put_u8(b'\n');
+                buf.extend_from_slice(str.as_bytes());
+
+                // Safety: We pushed two valid utf8 Str and a newline, all valid utf8
+                let buf = unsafe { StrMut::from_inner_unchecked(buf) };
                 *self = EventBuilderDataBuffer::Mutable(buf)
             }
             EventBuilderDataBuffer::Mutable(mutable_buf) => {
@@ -146,27 +148,27 @@ impl EventBuilder {
     /// 8. Queue a task which, if the readyState attribute is set to a value other than CLOSED, dispatches the newly created event at the EventSource object.
     #[must_use]
     fn dispatch(&mut self) -> Option<Event> {
-        let EventBuilder {
-            mut event,
-            id,
-            data_buffer,
-            retry,
-            ..
-        } = core::mem::take(self);
-        // replace id
-        self.id = id.clone();
-
-        if data_buffer.is_empty() {
+        if self.data_buffer.is_empty() {
+            self.event = EMPTY_STR;
+            self.retry = None;
+            self.is_complete = false;
             return None;
         }
 
-        if event.is_empty() {
-            event = MESSAGE_STR;
-        }
+        let event = if self.event.is_empty() {
+            MESSAGE_STR
+        } else {
+            core::mem::replace(&mut self.event, EMPTY_STR)
+        };
+
+        let data = core::mem::take(&mut self.data_buffer).freeze();
+        let id = self.id.clone();
+        let retry = self.retry.take();
+        self.is_complete = false;
 
         Some(Event {
             event,
-            data: data_buffer.freeze(),
+            data,
             id,
             retry,
         })

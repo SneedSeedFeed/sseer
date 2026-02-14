@@ -13,6 +13,21 @@ pub fn load_chunks(bytes: &[u8]) -> Vec<Bytes> {
         .collect()
 }
 
+/// Split on `\n` boundaries — each chunk is one complete line (including the `\n`)
+pub fn load_line_aligned_chunks(bytes: &[u8]) -> Vec<Bytes> {
+    let mut chunks = Vec::new();
+    let mut start = 0;
+    while let Some(pos) = memchr::memchr(b'\n', &bytes[start..]) {
+        let end = start + pos + 1;
+        chunks.push(Bytes::copy_from_slice(&bytes[start..end]));
+        start = end;
+    }
+    if start < bytes.len() {
+        chunks.push(Bytes::copy_from_slice(&bytes[start..]));
+    }
+    chunks
+}
+
 pub fn run_sseer(chunks: &[Bytes]) {
     let rt = tokio::runtime::Builder::new_current_thread()
         .build()
