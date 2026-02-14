@@ -31,28 +31,30 @@ For these benches we just run the parser on a single line of different types. Th
 
 | Line type | sseer | eventsource-stream | ratio |
 |---|---|---|---|
-| data field | 5.3ns | 28.5ns | **5.4x** |
-| comment | 4.8ns | 19.5ns | **4.0x** |
-| event field | 7.5ns | 24.9ns | **3.3x** |
-| id field | 5.5ns | 21.4ns | **3.9x** |
-| empty line | 4.5ns | 15.9ns | **3.5x** |
-| no value | 5.5ns | 20.4ns | **3.7x** |
-| no space | 6.8ns | 22.5ns | **3.3x** |
-| big 1024-byte line | 11.3ns | 761.6ns | **67x** |
+| data field | 5.3ns | 31.9ns | **6.0x** |
+| comment | 4.9ns | 19.0ns | **3.9x** |
+| event field | 7.3ns | 28.8ns | **3.9x** |
+| id field | 5.5ns | 23.1ns | **4.2x** |
+| empty line | 4.3ns | 17.3ns | **4.0x** |
+| no value | 5.3ns | 21.2ns | **4.0x** |
+| no space | 6.7ns | 26.3ns | **3.9x** |
+| big 1024-byte line | 11.4ns | 619.0ns | **54x** |
 
 ### event_stream
-These benchmarks run the full stream implementation across some events split into 128 byte chunks that ignore line boundaries.
+These benchmarks run the full stream implementation across some sample events in two conditions: events aligned to line boundaries (thus more individual stream items) and 'dumb' 128 byte chunks.
 - mixed is just a sort of random mixed set of different line types, with no particularly long data lines. 512 events.
 - ai_stream has its line lengths and ratios based on some responses I captured from OpenRouter, so is almost entirely made of data lines with some being quite long and some quite short. 512 events.
 - evenish_distribution just takes our data, comment, event and id field lines we use in the parse_line benchmark and stacks them end to end 128 times and also splits into 128 byte chunks.
 
-| Workload | sseer | eventsource-stream | ratio |
-|---|---|---|---|
-| mixed | 113.6µs | 184.4µs | **1.6x** |
-| ai_stream | 79.6µs | 344.7µs | **4.3x** |
-| evenish_distribution | 37.1µs | 56.3µs | **1.5x** |
+| Workload | Chunking | sseer | eventsource-stream | ratio |
+|---|---|---|---|---|
+| mixed | unaligned | 107.8µs | 169.4µs | **1.6x** |
+| mixed | aligned | 155.2µs | 220.4µs | **1.4x** |
+| ai_stream | unaligned | 76.5µs | 343.1µs | **4.5x** |
+| ai_stream | aligned | 103.6µs | 204.5µs | **2.0x** |
+| evenish_distribution | unaligned | 34.5µs | 57.6µs | **1.7x** |
 
-### Memory (512 events, 128-byte chunks)
+### Memory
 This is available under the example with `cargo run --example memory_usage`. I just use a global allocator that tracks calls to alloc and stores some stats, it's probably not perfectly accurate but hopefully it lets you get the gist. The main advantage `sseer` has over `eventsource-stream` is that we use `bytes::Bytes` as much as possible to reduce allocation, and we also avoid allocating a buffer for the data line in cases where there's only one data line.
 
 | Workload | Metric | sseer | eventsource-stream | ratio |
