@@ -49,7 +49,7 @@ impl EventBuilderDataBuffer {
         match self {
             EventBuilderDataBuffer::Uninit => *self = EventBuilderDataBuffer::Immutable(str),
             EventBuilderDataBuffer::Immutable(immutable_buf) => {
-                let len = immutable_buf.len() + str.len();
+                let len = immutable_buf.len() + 1 + str.len(); // immutable buf + '\n' + str
                 let inner = BytesMut::with_capacity(len);
                 // Safety: The buffer is empty, there is no bytes to be invalid
                 let mut buf = unsafe { StrMut::from_inner_unchecked(inner) };
