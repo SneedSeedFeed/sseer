@@ -67,6 +67,9 @@ name = "bytes"
 version = "1.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1e748733b7cbc798e1434b6ac524f0c1ff2ab456fe201501e6497c8417a4fc33"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "bytes-utils"
@@ -76,6 +79,7 @@ checksum = "7dafe3a8757b027e2be6e4e5601ed563c55989fcf1546e933c66c8eb3a058d35"
 dependencies = [
  "bytes",
  "either",
+ "serde",
 ]
 
 [[package]]
@@ -995,7 +999,7 @@ dependencies = [
 
 [[package]]
 name = "sseer"
-version = "0.1.8"
+version = "0.2.0"
 dependencies = [
  "bytes",
  "bytes-utils",

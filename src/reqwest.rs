@@ -21,7 +21,8 @@ use crate::{
     constants::EMPTY_STR,
     errors::{CantCloneError, EventStreamError},
     event::Event,
-    event_stream::EventStream,
+    event_stream::bytes::EventStreamBytes,
+    response_to_stream,
     retry::{DEFAULT_RETRY, ExponentialBackoff, RetryPolicy},
 };
 
@@ -67,7 +68,7 @@ pin_project! {
         },
         Open {
             #[pin]
-            stream: EventStream<BodyDataStream<Body>>,
+            stream: EventStreamBytes<BodyDataStream<Body>>,
             retry_state: Option<(usize, Duration)>,
         },
         Closed,
@@ -105,13 +106,6 @@ impl std::fmt::Debug for ConnectionState {
     }
 }
 
-// just some reasoning on this func: this is sort of what `Response::bytes_stream` does under da hood to make its stream, but the stream it gives you is an Impl Stream thus I cant name the bugger.
-// if i decide boxing is better then I can still do that in future
-fn response_to_stream(response: Response) -> EventStream<BodyDataStream<Body>> {
-    EventStream::new(BodyDataStream::new(Body::from(response)))
-}
-
-const TEXT_EVENT_STREAM: HeaderValue = HeaderValue::from_static("text/event-stream");
 impl<'pin, R> EventSourceProjection<'pin, R> {
     fn initiate_connection(
         &mut self,
@@ -145,7 +139,7 @@ impl<'pin, R> EventSourceProjection<'pin, R> {
         }
 
         if let Some(content_type) = response.headers().get(CONTENT_TYPE)
-            && content_type != TEXT_EVENT_STREAM
+            && !content_type.as_bytes().starts_with(b"text/event-stream")
         {
             return Err(EventSourceErrorKind::InvalidContentType {
                 status,

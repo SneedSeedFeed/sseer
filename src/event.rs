@@ -4,8 +4,9 @@ use core::time::Duration;
 
 use bytes_utils::{Str, StrMut};
 
-/// Event with immutable fields from a [EventStream][crate::event_stream::EventStream]
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+/// Event with immutable fields
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Event {
     pub event: Str,
     pub data: Str,

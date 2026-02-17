@@ -7,7 +7,10 @@ use crate::{
         BIG_OLE_DATA_LINE, COMMENT_LINE, DATA_LINE, EMPTY_LINE, EVENT_LINE, ID_LINE, NO_SPACE_LINE,
         NO_VALUE_LINE, generate_one_of_each,
     },
-    event_stream::{load_chunks, load_line_aligned_chunks, run_eventsource_stream, run_sseer},
+    event_stream::{
+        load_chunks, load_line_aligned_chunks, run_eventsource_stream, run_sseer,
+        run_sseer_bytes_only,
+    },
 };
 
 // eventsource-stream parser, it isn't public but I wanted to bench against it
@@ -71,13 +74,21 @@ fn bench_event_stream(c: &mut Criterion) {
         ("mixed", "unaligned", &mixed_chunks),
         ("ai_stream", "unaligned", &ai_chunks),
         ("evenish_distribution", "unaligned", &evenish_distribution),
-        ("ai_stream", "aligned", &ai_line_aligned),
-        ("mixed", "aligned", &mixed_aligned),
+        ("ai_stream", "line-aligned", &ai_line_aligned),
+        ("mixed", "line-aligned", &mixed_aligned),
     ] {
         let name = format!("{name}_{alignment}");
         group.bench_with_input(BenchmarkId::new("sseer", &name), chunks, |b, chunks| {
             b.iter(|| run_sseer(chunks));
         });
+
+        group.bench_with_input(
+            BenchmarkId::new("sseer_bytes_only", &name),
+            chunks,
+            |b, chunks| {
+                b.iter(|| run_sseer_bytes_only(chunks));
+            },
+        );
 
         group.bench_with_input(
             BenchmarkId::new("eventsource_stream", &name),

@@ -96,57 +96,64 @@ fn load_chunks(bytes: &[u8]) -> Vec<Bytes> {
         .collect()
 }
 
-fn measure_sseer(chunks: &[Bytes]) -> AllocStats {
-    let rt = tokio::runtime::Builder::new_current_thread()
-        .build()
-        .unwrap();
+fn load_aligned(bytes: &[u8]) -> Vec<Bytes> {
+    let mut chunks = Vec::new();
+    let mut start = 0;
+    while let Some(pos) = memchr::memchr(b'\n', &bytes[start..]) {
+        let end = start + pos + 1;
+        chunks.push(Bytes::copy_from_slice(&bytes[start..end]));
+        start = end;
+    }
+    if start < bytes.len() {
+        chunks.push(Bytes::copy_from_slice(&bytes[start..]));
+    }
+    chunks
+}
 
+fn measure(f: impl Fn()) -> AllocStats {
     // warm up
-    rt.block_on(async {
-        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-        let mut es = sseer::EventStream::new(s);
-        while let Some(item) = es.next().await {
-            drop(item);
-        }
-    });
+    f();
 
     ALLOC.reset();
-
-    rt.block_on(async {
-        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-        let mut es = sseer::EventStream::new(s);
-        while let Some(item) = es.next().await {
-            drop(item);
-        }
-    });
+    f();
 
     ALLOC.snapshot()
 }
 
+fn measure_sseer_generic(chunks: &[Bytes]) -> AllocStats {
+    measure(|| {
+        futures::executor::block_on(async {
+            let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
+            let mut es = sseer::event_stream::generic::EventStream::new(s);
+            while let Some(item) = es.next().await {
+                drop(item);
+            }
+        });
+    })
+}
+
+fn measure_sseer_bytes(chunks: &[Bytes]) -> AllocStats {
+    measure(|| {
+        futures::executor::block_on(async {
+            let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
+            let mut es = sseer::event_stream::bytes::EventStreamBytes::new(s);
+            while let Some(item) = es.next().await {
+                drop(item);
+            }
+        });
+    })
+}
+
 fn measure_eventsource_stream(chunks: &[Bytes]) -> AllocStats {
-    let rt = tokio::runtime::Builder::new_current_thread()
-        .build()
-        .unwrap();
-
-    rt.block_on(async {
-        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-        let mut es = eventsource_stream::EventStream::new(s);
-        while let Some(item) = es.next().await {
-            drop(item);
-        }
-    });
-
-    ALLOC.reset();
-
-    rt.block_on(async {
-        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-        let mut es = eventsource_stream::EventStream::new(s);
-        while let Some(item) = es.next().await {
-            drop(item);
-        }
-    });
-
-    ALLOC.snapshot()
+    measure(|| {
+        futures::executor::block_on(async {
+            let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
+            let mut es = eventsource_stream::EventStream::new(s);
+            while let Some(item) = es.next().await {
+                drop(item);
+            }
+        });
+    })
 }
 
 fn fmt_bytes(n: usize) -> String {
@@ -159,30 +166,86 @@ fn fmt_bytes(n: usize) -> String {
     }
 }
 
-fn print_row(label: &str, sseer: AllocStats, es: AllocStats) {
-    println!("  {label}");
+fn fmt_ratio(baseline: usize, value: usize) -> String {
+    if value == 0 {
+        if baseline == 0 {
+            "**1.0x**".to_string()
+        } else {
+            "**\u{221e}**".to_string()
+        }
+    } else {
+        format!("**{:.1}x**", baseline as f64 / value as f64)
+    }
+}
+
+fn print_row(
+    workload: &str,
+    chunking: &str,
+    metric: &str,
+    baseline: usize,
+    generic: usize,
+    bytes: usize,
+    fmt: fn(usize) -> String,
+) {
     println!(
-        "    {:22} {:>12} {:>12} {:>12}",
-        "sseer",
-        sseer.alloc_count,
-        fmt_bytes(sseer.bytes_allocated),
-        fmt_bytes(sseer.peak_live_bytes),
+        "| {workload} | {chunking} | {metric} | {} | {} ({}) | {} ({}) |",
+        fmt(baseline),
+        fmt(generic),
+        fmt_ratio(baseline, generic),
+        fmt(bytes),
+        fmt_ratio(baseline, bytes),
     );
-    println!(
-        "    {:22} {:>12} {:>12} {:>12}",
-        "eventsource-stream",
-        es.alloc_count,
-        fmt_bytes(es.bytes_allocated),
-        fmt_bytes(es.peak_live_bytes),
+}
+
+fn fmt_count(n: usize) -> String {
+    if n >= 1_000_000 {
+        format!(
+            "{},{:03},{:03}",
+            n / 1_000_000,
+            (n / 1_000) % 1_000,
+            n % 1_000
+        )
+    } else if n >= 1_000 {
+        format!("{},{:03}", n / 1_000, n % 1_000)
+    } else {
+        format!("{n}")
+    }
+}
+
+fn print_section(
+    workload: &str,
+    chunking: &str,
+    baseline: AllocStats,
+    generic: AllocStats,
+    bytes: AllocStats,
+) {
+    print_row(
+        workload,
+        chunking,
+        "alloc calls",
+        baseline.alloc_count,
+        generic.alloc_count,
+        bytes.alloc_count,
+        fmt_count,
     );
-    println!(
-        "    {:22} {:>11.1}x {:>11.1}x {:>11.1}x",
-        "ratio (es/sseer)",
-        es.alloc_count as f64 / sseer.alloc_count.max(1) as f64,
-        es.bytes_allocated as f64 / sseer.bytes_allocated.max(1) as f64,
-        es.peak_live_bytes as f64 / sseer.peak_live_bytes.max(1) as f64,
+    print_row(
+        workload,
+        chunking,
+        "total bytes",
+        baseline.bytes_allocated,
+        generic.bytes_allocated,
+        bytes.bytes_allocated,
+        fmt_bytes,
     );
-    println!();
+    print_row(
+        workload,
+        chunking,
+        "peak live",
+        baseline.peak_live_bytes,
+        generic.peak_live_bytes,
+        bytes.peak_live_bytes,
+        fmt_bytes,
+    );
 }
 
 fn main() {
@@ -197,20 +260,35 @@ fn main() {
         ),
     ];
 
-    println!();
-    println!("Memory allocation comparison: sseer vs eventsource-stream");
-    println!("  Data sets chunked into {CHUNK_SIZE}-byte pieces");
-    println!();
     println!(
-        "    {:22} {:>12} {:>12} {:>12}",
-        "impl", "alloc calls", "total bytes", "peak live"
+        "| Workload | Chunking | Metric | eventsource-stream | sseer (generic) | sseer (bytes) |"
     );
-    println!("    {}", "-".repeat(60));
+    println!("|---|---|---|---|---|---|");
 
-    for &(name, data_set) in data_sets {
-        let chunks = load_chunks(data_set);
-        let sseer = measure_sseer(&chunks);
-        let es = measure_eventsource_stream(&chunks);
-        print_row(name, sseer, es);
+    for &(name, data) in data_sets {
+        let unaligned = load_chunks(data);
+        let aligned = load_aligned(data);
+
+        let generic_unaligned = measure_sseer_generic(&unaligned);
+        let generic_aligned = measure_sseer_generic(&aligned);
+        let bytes_unaligned = measure_sseer_bytes(&unaligned);
+        let bytes_aligned = measure_sseer_bytes(&aligned);
+        let es_unaligned = measure_eventsource_stream(&unaligned);
+        let es_aligned = measure_eventsource_stream(&aligned);
+
+        print_section(
+            name,
+            &format!("unaligned ({CHUNK_SIZE}B)"),
+            es_unaligned,
+            generic_unaligned,
+            bytes_unaligned,
+        );
+        print_section(
+            name,
+            "line-aligned",
+            es_aligned,
+            generic_aligned,
+            bytes_aligned,
+        );
     }
 }

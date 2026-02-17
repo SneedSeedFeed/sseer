@@ -187,3 +187,33 @@ pub fn parse_line_from_buffer(buffer: &mut BytesMut) -> Option<RawEventLineOwned
         }),
     }
 }
+
+pub fn parse_line_from_bytes(buffer: &mut Bytes) -> Option<RawEventLineOwned> {
+    let (line_end, rem_start) = find_eol(buffer)?;
+
+    let line = buffer.split_to(line_end);
+    buffer.advance(rem_start - line_end);
+
+    if line.is_empty() {
+        return Some(RawEventLineOwned::Empty);
+    }
+
+    match memchr::memchr(b':', &line) {
+        Some(0) => Some(RawEventLineOwned::Comment),
+        Some(colon_pos) => {
+            let value_start = if line.get(colon_pos + 1) == Some(&b' ') {
+                colon_pos + 2
+            } else {
+                colon_pos + 1
+            };
+            Some(RawEventLineOwned::Field {
+                field_name: line.slice(..colon_pos),
+                field_value: Some(line.slice(value_start..)),
+            })
+        }
+        None => Some(RawEventLineOwned::Field {
+            field_name: line,
+            field_value: None,
+        }),
+    }
+}

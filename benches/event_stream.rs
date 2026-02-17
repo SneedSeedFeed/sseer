@@ -13,7 +13,7 @@ pub fn load_chunks(bytes: &[u8]) -> Vec<Bytes> {
         .collect()
 }
 
-/// Split on `\n` boundaries — each chunk is one complete line (including the `\n`)
+/// Split on `\n` boundaries - each chunk is one complete line (including the `\n`)
 pub fn load_line_aligned_chunks(bytes: &[u8]) -> Vec<Bytes> {
     let mut chunks = Vec::new();
     let mut start = 0;
@@ -35,6 +35,19 @@ pub fn run_sseer(chunks: &[Bytes]) {
     rt.block_on(async {
         let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
         let mut es = sseer::EventStream::new(s);
+        while let Some(item) = es.next().await {
+            let _ = black_box(item);
+        }
+    });
+}
+
+pub fn run_sseer_bytes_only(chunks: &[Bytes]) {
+    let rt = tokio::runtime::Builder::new_current_thread()
+        .build()
+        .unwrap();
+    rt.block_on(async {
+        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
+        let mut es = sseer::event_stream::bytes::EventStreamBytes::new(s);
         while let Some(item) = es.next().await {
             let _ = black_box(item);
         }
