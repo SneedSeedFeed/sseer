@@ -60,15 +60,15 @@ This is available under the example with `cargo run --example memory_usage`. I j
 
 | Workload | Chunking | Metric | eventsource-stream | sseer (generic) | sseer (bytes) |
 |---|---|---|---|---|---|
-| mixed (512 events) | unaligned (128B) | alloc calls | 4,753 | 546 (**8.7x**) | 535 (**8.9x**) |
-| mixed (512 events) | unaligned (128B) | total bytes | 188.1 KiB | 35.8 KiB (**5.3x**) | 34.2 KiB (**5.5x**) |
-| mixed (512 events) | unaligned (128B) | peak live | 488 B | 742 B (**0.7x**) | 739 B (**0.7x**) |
-| mixed (512 events) | line-aligned | alloc calls | 6,034 | 1,743 (**3.5x**) | 306 (**19.7x**) |
-| mixed (512 events) | line-aligned | total bytes | 92.8 KiB | 49.9 KiB (**1.9x**) | 11.5 KiB (**8.1x**) |
-| mixed (512 events) | line-aligned | peak live | 171 B | 299 B (**0.6x**) | 93 B (**1.8x**) |
-| ai_stream (512 events) | unaligned (128B) | alloc calls | 4,094 | 7 (**584.9x**) | 7 (**584.9x**) |
-| ai_stream (512 events) | unaligned (128B) | total bytes | 669.2 KiB | 7.9 KiB (**84.6x**) | 7.9 KiB (**84.6x**) |
-| ai_stream (512 events) | unaligned (128B) | peak live | 6.7 KiB | 6.0 KiB (**1.1x**) | 6.0 KiB (**1.1x**) |
-| ai_stream (512 events) | line-aligned | alloc calls | 3,576 | 1,537 (**2.3x**) | 0 (**∞**) |
-| ai_stream (512 events) | line-aligned | total bytes | 515.3 KiB | 123.9 KiB (**4.2x**) | 0 B (**∞**) |
-| ai_stream (512 events) | line-aligned | peak live | 7.3 KiB | 1.5 KiB (**4.7x**) | 0 B (**∞**) |
+| mixed | unaligned (128B) | alloc calls | 4,753 | 546 (**8.7x**) | 535 (**8.9x**) |
+| mixed | unaligned (128B) | total bytes | 188.1 KiB | 35.8 KiB (**5.3x**) | 34.2 KiB (**5.5x**) |
+| mixed | unaligned (128B) | peak live | 488 B | 742 B (**0.7x**) | 739 B (**0.7x**) |
+| mixed | line-aligned | alloc calls | 6,034 | 1,743 (**3.5x**) | 306 (**19.7x**) |
+| mixed | line-aligned | total bytes | 92.8 KiB | 49.9 KiB (**1.9x**) | 11.5 KiB (**8.1x**) |
+| mixed | line-aligned | peak live | 171 B | 299 B (**0.6x**) | 93 B (**1.8x**) |
+| ai_stream | unaligned (128B) | alloc calls | 4,094 | 7 (**584.9x**) | 7 (**584.9x**) |
+| ai_stream | unaligned (128B) | total bytes | 669.2 KiB | 7.9 KiB (**84.6x**) | 7.9 KiB (**84.6x**) |
+| ai_stream | unaligned (128B) | peak live | 6.7 KiB | 6.0 KiB (**1.1x**) | 6.0 KiB (**1.1x**) |
+| ai_stream | line-aligned | alloc calls | 3,576 | 1,537 (**2.3x**) | 0 (**∞**) |
+| ai_stream | line-aligned | total bytes | 515.3 KiB | 123.9 KiB (**4.2x**) | 0 B (**∞**) |
+| ai_stream | line-aligned | peak live | 7.3 KiB | 1.5 KiB (**4.7x**) | 0 B (**∞**) |

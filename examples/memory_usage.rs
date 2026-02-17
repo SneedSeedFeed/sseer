@@ -250,14 +250,8 @@ fn print_section(
 
 fn main() {
     let data_sets: &[(&str, &[u8])] = &[
-        (
-            "mixed (512 events)",
-            include_bytes!("../bench_data/mixed.bin"),
-        ),
-        (
-            "ai_stream (512 events)",
-            include_bytes!("../bench_data/ai_stream.bin"),
-        ),
+        ("mixed", include_bytes!("../bench_data/mixed.bin")),
+        ("ai_stream", include_bytes!("../bench_data/ai_stream.bin")),
     ];
 
     println!(
