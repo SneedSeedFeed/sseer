@@ -93,7 +93,7 @@
 //!
 //! | Feature | Default | Description | no std? |
 //! | --- | --- | --- | --- |
-//! | `serde` | off | Derives [`Serialize`][::serde::Serialize] and [`Deserialize`][::serde::Deserialize] on [`Event`][event::Event] and enables `serde` support in [`bytes-utils`][bytes_utils]. Does **not** enable `std`. | true |
+//! | `serde` | off | Derives [`Serialize`][::serde::Serialize] and [`Deserialize`][::serde::Deserialize] on [`Event`][event::Event] and enables `serde` support in [`bytes-utils`][bytes_utils]. | false |
 //! | `std` | off | Enables standard library support in core dependencies (`bytes`, `memchr`, `futures-core`, etc.). Notably enables runtime SIMD for memchr. Turned on automatically by `reqwest` and `json`. | false |
 //! | `reqwest` | off | Provides [`EventSource`] for HTTP-based SSE with automatic reconnection and configurable retry policies. | false |
 //! | `json` | off | Provides [`JsonStream`][json_stream::JsonStream] for deserialising event data into typed values via [`serde_json`] and lets you choose between the default errors or [`serde_path_to_error`] for richer errors. | false |
