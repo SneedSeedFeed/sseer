@@ -11,7 +11,11 @@ use crate::{
 };
 use bytes::{Buf, BufMut, Bytes, BytesMut};
 use bytes_utils::{Str, StrMut};
-use core::time::Duration;
+use core::{
+    pin::Pin,
+    task::{Context, Poll, ready},
+    time::Duration,
+};
 use futures_core::Stream;
 
 #[derive(Debug, Clone)]
@@ -255,11 +259,6 @@ macro_rules! try_parse_event_buffer {
     };
 }
 
-use core::{
-    pin::Pin,
-    task::{Context, Poll, ready},
-};
-
 fn parse_event_bytes<E>(
     bytes: &mut Bytes,
     builder: &mut EventBuilder,
@@ -286,7 +285,7 @@ fn parse_event_bytes<E>(
     }
 }
 
-pub type EventStreamBytes<E> = EventStream<E>;
+pub type EventStreamBytes<S> = EventStream<S>;
 pin_project_lite::pin_project! {
     #[doc = "Server Sent Event stream"]
     #[derive(Debug)]
