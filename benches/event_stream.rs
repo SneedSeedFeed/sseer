@@ -41,19 +41,6 @@ pub fn run_sseer(chunks: &[Bytes]) {
     });
 }
 
-pub fn run_sseer_bytes_only(chunks: &[Bytes]) {
-    let rt = tokio::runtime::Builder::new_current_thread()
-        .build()
-        .unwrap();
-    rt.block_on(async {
-        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-        let mut es = sseer::event_stream::bytes::EventStreamBytes::new(s);
-        while let Some(item) = es.next().await {
-            let _ = black_box(item);
-        }
-    });
-}
-
 pub fn run_eventsource_stream(chunks: &[Bytes]) {
     let rt = tokio::runtime::Builder::new_current_thread()
         .build()
@@ -61,6 +48,19 @@ pub fn run_eventsource_stream(chunks: &[Bytes]) {
     rt.block_on(async {
         let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
         let mut es = eventsource_stream::EventStream::new(s);
+        while let Some(item) = es.next().await {
+            let _ = black_box(item);
+        }
+    });
+}
+
+pub fn run_eventsource_stream2(chunks: &[Bytes]) {
+    let rt = tokio::runtime::Builder::new_current_thread()
+        .build()
+        .unwrap();
+    rt.block_on(async {
+        let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
+        let mut es = eventsource_stream2::EventStream::new(s);
         while let Some(item) = es.next().await {
             let _ = black_box(item);
         }
