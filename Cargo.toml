@@ -56,7 +56,7 @@ json = [
 
 
 [dev-dependencies]
-criterion = { version = "0.8.2", features = ["html_reports"] }
+criterion = { version = "0.8.2", features = ["html_reports", "async_tokio"] }
 eventsource-stream = "0.2.3"
 eventsource-stream2 = { version = "0.4", features = ["std"] }
 futures = "0.3.31"
@@ -71,6 +71,10 @@ codegen-units = 1
 
 [[bench]]
 name = "bench"
+harness = false
+
+[[bench]]
+name = "long_lines"
 harness = false
 
 [[example]]
