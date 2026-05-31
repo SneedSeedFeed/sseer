@@ -223,12 +223,15 @@ pub(crate) const fn starts_with_bom(buf: &[u8]) -> Option<bool> {
 fn parse_event<E>(
     buffer: &mut BytesMut,
     builder: &mut EventBuilder,
+    already_scanned: &mut usize,
 ) -> Result<Option<Event>, EventStreamError<E>> {
     if buffer.is_empty() {
         return Ok(None);
     }
     loop {
-        let event_line = match parse_line_from_buffer(buffer).map(RawEventLineOwned::validate) {
+        let event_line = match parse_line_from_buffer(buffer, already_scanned)
+            .map(RawEventLineOwned::validate)
+        {
             Some(Ok(event_line)) => event_line,
             Some(Err(e)) => return Err(EventStreamError::Utf8Error(e)),
             None => return Ok(None),
@@ -248,7 +251,7 @@ fn parse_event<E>(
 
 macro_rules! try_parse_event_buffer {
     ($this:ident) => {
-        match parse_event($this.buffer, $this.builder) {
+        match parse_event($this.buffer, $this.builder, $this.already_scanned) {
             Ok(Some(event)) => {
                 *$this.last_event_id = event.id.clone();
                 return Poll::Ready(Some(Ok(event)));
@@ -297,6 +300,7 @@ pin_project_lite::pin_project! {
         builder: EventBuilder,
         state: EventStreamState,
         last_event_id: Str,
+        already_scanned: usize,
     }
 }
 
@@ -310,6 +314,7 @@ impl<S> EventStream<S> {
             builder: EventBuilder::default(),
             state: EventStreamState::NotStarted,
             last_event_id: EMPTY_STR,
+            already_scanned: 0,
         }
     }
 
@@ -434,6 +439,8 @@ where
                         Some(true) => {
                             *this.state = EventStreamState::Started;
                             this.buffer.advance(BOM.len());
+                            // scan offset invalidated by advance so reset it
+                            *this.already_scanned = 0;
                         }
                         Some(false) => *this.state = EventStreamState::Started,
                         None => continue,
@@ -899,6 +906,148 @@ data: test
                     retry: None,
                 },
             ]
+        );
+    }
+
+    // unlike most of the above, these below tests weren't inherited from `eventsource-stream` anda re AI generated
+
+    /// A single very long line split into many small chunks must parse correctly. This is the
+    /// regression test for the quadratic end-of-line rescan: the `already_scanned` cursor means
+    /// each byte is examined once instead of the whole buffer being re-scanned every chunk.
+    #[tokio::test]
+    async fn long_line_split_into_many_chunks() {
+        let data = "x".repeat(100_000);
+        let message = format!("data: {data}\n\n");
+
+        // Deliberately tiny, line-boundary-agnostic chunks.
+        let chunks: Vec<_> = message
+            .as_bytes()
+            .chunks(7)
+            .map(|c| Ok::<_, ()>(Bytes::copy_from_slice(c)))
+            .collect();
+
+        let events = EventStream::new(futures::stream::iter(chunks))
+            .try_collect::<Vec<_>>()
+            .await
+            .unwrap();
+
+        assert_eq!(events.len(), 1);
+        assert_eq!(events[0].event, "message");
+        assert_eq!(events[0].data.len(), data.len());
+        assert_eq!(&*events[0].data, data.as_str());
+    }
+
+    /// A lone `CR` at the end of a chunk (when the buffer is already non-empty) makes `find_eol`
+    /// return its resume offset; the next chunk must let us pick the scan back up at that `CR` and
+    /// correctly recognise the `CRLF`.
+    #[tokio::test]
+    async fn cr_at_chunk_boundary_resumes_correctly() {
+        let events = EventStream::new(futures::stream::iter(vec![
+            Ok::<_, ()>(Bytes::from_static(b"data: a")),
+            Ok::<_, ()>(Bytes::from_static(b"b\r")),
+            Ok::<_, ()>(Bytes::from_static(b"\n\r\n")),
+        ]))
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+
+        assert_eq!(
+            events,
+            vec![Event {
+                event: Str::from_static("message"),
+                data: Str::from_static("ab"),
+                id: EMPTY_STR,
+                retry: None,
+            }]
+        );
+    }
+
+    /// A stream that returns `Pending` (waking itself) before every chunk, forcing a real
+    /// `poll_next` boundary between chunks. `futures::stream::iter` never does this, so it can't
+    /// surface bugs in state that persists across polls.
+    struct PendingBetween {
+        chunks: std::collections::VecDeque<Bytes>,
+        pending_next: bool,
+    }
+
+    impl PendingBetween {
+        fn new(chunks: impl IntoIterator<Item = &'static [u8]>) -> Self {
+            Self {
+                chunks: chunks.into_iter().map(Bytes::from_static).collect(),
+                pending_next: true,
+            }
+        }
+    }
+
+    impl Stream for PendingBetween {
+        type Item = Result<Bytes, ()>;
+
+        fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
+            if self.pending_next {
+                self.pending_next = false;
+                cx.waker().wake_by_ref();
+                return Poll::Pending;
+            }
+            match self.chunks.pop_front() {
+                Some(b) => {
+                    self.pending_next = true;
+                    Poll::Ready(Some(Ok(b)))
+                }
+                None => Poll::Ready(None),
+            }
+        }
+    }
+
+    /// Regression test for a stale scan cursor across the BOM boundary: the BOM arrives split such
+    /// that a poll boundary lands while the partial BOM is buffered (so the cursor gets set), and
+    /// the post-BOM content begins with a `LINE FEED` within the first couple of bytes. If the
+    /// cursor were not reset when the BOM is stripped, that leading `LF` would be scanned over and
+    /// the event lost.
+    #[tokio::test]
+    async fn split_bom_across_poll_boundary_resets_cursor() {
+        // After stripping the BOM the content is "\ndata: hi\n\n".
+        let events = EventStream::new(PendingBetween::new([
+            b"\xEF\xBB".as_slice(),
+            b"\xBF\ndata: hi\n\n".as_slice(),
+        ]))
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+
+        assert_eq!(
+            events,
+            vec![Event {
+                event: Str::from_static("message"),
+                data: Str::from_static("hi"),
+                id: EMPTY_STR,
+                retry: None,
+            }]
+        );
+    }
+
+    /// The same long-line case but across real poll boundaries, so the cursor genuinely has to
+    /// persist its resume offset between `poll_next` calls.
+    #[tokio::test]
+    async fn long_line_across_poll_boundaries() {
+        let events = EventStream::new(PendingBetween::new([
+            b"data: ".as_slice(),
+            b"xxxxxxxxxx".as_slice(),
+            b"yyyyyyyyyy".as_slice(),
+            b"zzzzzzzzzz".as_slice(),
+            b"\n\n".as_slice(),
+        ]))
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+
+        assert_eq!(
+            events,
+            vec![Event {
+                event: Str::from_static("message"),
+                data: Str::from_static("xxxxxxxxxxyyyyyyyyyyzzzzzzzzzz"),
+                id: EMPTY_STR,
+                retry: None,
+            }]
         );
     }
 }
