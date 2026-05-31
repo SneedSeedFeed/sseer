@@ -93,7 +93,7 @@
 //!
 //! | Feature | Default | Description | no std? |
 //! | --- | --- | --- | --- |
-//! | `serde` | off | Derives [`Serialize`][::serde::Serialize] and [`Deserialize`][::serde::Deserialize] on [`Event`][event::Event] and enables `serde` support in [`bytes-utils`][bytes_utils]. | false |
+//! | `serde` | off | Derives [`Serialize`][::serde::Serialize] and [`Deserialize`][::serde::Deserialize] on [`Event`][event::Event] and enables [`serde`] support in [`bytes-utils`][bytes_utils]. | false |
 //! | `std` | off | Enables standard library support in core dependencies (`bytes`, `memchr`, `futures-core`, etc.). Notably enables runtime SIMD for memchr. Turned on automatically by `reqwest` and `json`. | false |
 //! | `reqwest` | off | Provides [`EventSource`] for HTTP-based SSE with automatic reconnection and configurable retry policies. | false |
 //! | `json` | off | Provides [`JsonStream`][json_stream::JsonStream] for deserialising event data into typed values via [`serde_json`] and lets you choose between the default errors or [`serde_path_to_error`] for richer errors. | false |
@@ -120,14 +120,14 @@ pub mod json_stream;
 #[cfg(feature = "reqwest")]
 pub use reqwest::EventSource;
 
-pub use event_stream::{bytes::EventStreamBytes, generic::EventStream};
+pub use event_stream::{EventStream, EventStreamBytes};
 
 #[cfg(feature = "reqwest")]
 /// Convert a [`Response`][::reqwest::Response] into a [`Stream`][futures_core::Stream] via a similar mechanism to [::reqwest::Response::bytes_stream]
 pub fn response_to_stream(
     response: ::reqwest::Response,
-) -> event_stream::bytes::EventStreamBytes<http_body_util::BodyDataStream<::reqwest::Body>> {
-    event_stream::bytes::EventStreamBytes::new(http_body_util::BodyDataStream::new(
-        ::reqwest::Body::from(response),
-    ))
+) -> event_stream::EventStream<http_body_util::BodyDataStream<::reqwest::Body>> {
+    event_stream::EventStream::new(http_body_util::BodyDataStream::new(::reqwest::Body::from(
+        response,
+    )))
 }

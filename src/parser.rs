@@ -88,24 +88,29 @@ impl RawEventLineOwned {
     }
 }
 
-/// Splits a slice at the next EOL bytes, returns a tuple where the first value is the non-inclusive end of the line and the second value is the inclusive start of the remainder.
-/// Returns [None] if more data is required to find the next EOL / an EOL byte is not found.
-fn find_eol(bytes: &[u8]) -> Option<(usize, usize)> {
-    let first_match = memchr::memchr2(CR, LF, bytes)?;
+/// Splits a slice at the next EOL bytes, scanning from `start`.
+///
+/// On success returns `Ok((line_end, rem_start))` where `line_end` is the non-inclusive end of
+/// the line and `rem_start` is the inclusive start of the remainder.
+///
+/// On failure returns `Err(resume_from)` which is where you should resume scanning from in future to avoid re-scanning
+fn find_eol(bytes: &[u8], start: usize) -> Result<(usize, usize), usize> {
+    let relative_match = memchr::memchr2(CR, LF, &bytes[start..]).ok_or(bytes.len())?;
+    let first_match = relative_match + start;
 
     match bytes[first_match] {
-        LF => Some((first_match, first_match + 1)),
+        LF => Ok((first_match, first_match + 1)),
         CR => {
             if first_match + 1 >= bytes.len() {
-                return None; // need more data to see if it's CRLF or just CR
+                return Err(first_match); // need more data to see if it's CRLF or just CR
             }
 
             // Cr lf
             if bytes[first_match + 1] == LF {
-                Some((first_match, first_match + 2))
+                Ok((first_match, first_match + 2))
             } else {
                 // just cr
-                Some((first_match, first_match + 1))
+                Ok((first_match, first_match + 1))
             }
         }
         _ => unreachable!(),
@@ -114,7 +119,9 @@ fn find_eol(bytes: &[u8]) -> Option<(usize, usize)> {
 
 /// Splits a slice of bytes at the next EOL bytes. Returns None if more data is required to find the next EOL / an EOL byte is not found.
 fn split_at_next_eol(bytes: &[u8]) -> Option<(&[u8], &[u8])> {
-    find_eol(bytes).map(|(line_end, rem_start)| (&bytes[..line_end], &bytes[rem_start..]))
+    find_eol(bytes, 0)
+        .ok()
+        .map(|(line_end, rem_start)| (&bytes[..line_end], &bytes[rem_start..]))
 }
 
 fn read_line(bytes: &[u8]) -> RawEventLine<'_> {
@@ -158,8 +165,21 @@ pub fn parse_line(bytes: &[u8]) -> Option<(RawEventLine<'_>, &[u8])> {
 
 /// Reads the next [RawEventLineOwned] from the buffer, then advances the buffer past the corresponding EOL.
 /// Returns [None] if the buffer contains no cr, lf or crlf. Additionally returns [None] if the buffer ends with a cr as it could end up being a crlf if more data is added.
-pub fn parse_line_from_buffer(buffer: &mut BytesMut) -> Option<RawEventLineOwned> {
-    let (line_end, rem_start) = find_eol(buffer)?;
+///
+/// `scan_from` adjusts where to start scanning from to prevent re-scanning of already checked bytes
+pub fn parse_line_from_buffer(
+    buffer: &mut BytesMut,
+    scan_from: &mut usize,
+) -> Option<RawEventLineOwned> {
+    let (line_end, rem_start) = match find_eol(buffer, *scan_from) {
+        Ok(eol) => eol,
+        Err(resume_from) => {
+            *scan_from = resume_from;
+            return None;
+        }
+    };
+
+    *scan_from = 0;
 
     let line = buffer.split_to(line_end).freeze();
     buffer.advance(rem_start - line_end);
@@ -189,7 +209,7 @@ pub fn parse_line_from_buffer(buffer: &mut BytesMut) -> Option<RawEventLineOwned
 }
 
 pub fn parse_line_from_bytes(buffer: &mut Bytes) -> Option<RawEventLineOwned> {
-    let (line_end, rem_start) = find_eol(buffer)?;
+    let (line_end, rem_start) = find_eol(buffer, 0).ok()?;
 
     let line = buffer.split_to(line_end);
     buffer.advance(rem_start - line_end);

@@ -120,23 +120,11 @@ fn measure(f: impl Fn()) -> AllocStats {
     ALLOC.snapshot()
 }
 
-fn measure_sseer_generic(chunks: &[Bytes]) -> AllocStats {
-    measure(|| {
-        futures::executor::block_on(async {
-            let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-            let mut es = sseer::event_stream::generic::EventStream::new(s);
-            while let Some(item) = es.next().await {
-                drop(item);
-            }
-        });
-    })
-}
-
 fn measure_sseer_bytes(chunks: &[Bytes]) -> AllocStats {
     measure(|| {
         futures::executor::block_on(async {
             let s = stream::iter(chunks.iter().cloned().map(Ok::<_, ()>));
-            let mut es = sseer::event_stream::bytes::EventStreamBytes::new(s);
+            let mut es = sseer::event_stream::EventStream::new(s);
             while let Some(item) = es.next().await {
                 drop(item);
             }
@@ -183,15 +171,12 @@ fn print_row(
     chunking: &str,
     metric: &str,
     baseline: usize,
-    generic: usize,
     bytes: usize,
     fmt: fn(usize) -> String,
 ) {
     println!(
-        "| {workload} | {chunking} | {metric} | {} | {} ({}) | {} ({}) |",
+        "| {workload} | {chunking} | {metric} | {} | {} ({}) |",
         fmt(baseline),
-        fmt(generic),
-        fmt_ratio(baseline, generic),
         fmt(bytes),
         fmt_ratio(baseline, bytes),
     );
@@ -212,19 +197,12 @@ fn fmt_count(n: usize) -> String {
     }
 }
 
-fn print_section(
-    workload: &str,
-    chunking: &str,
-    baseline: AllocStats,
-    generic: AllocStats,
-    bytes: AllocStats,
-) {
+fn print_section(workload: &str, chunking: &str, baseline: AllocStats, bytes: AllocStats) {
     print_row(
         workload,
         chunking,
         "alloc calls",
         baseline.alloc_count,
-        generic.alloc_count,
         bytes.alloc_count,
         fmt_count,
     );
@@ -233,7 +211,6 @@ fn print_section(
         chunking,
         "total bytes",
         baseline.bytes_allocated,
-        generic.bytes_allocated,
         bytes.bytes_allocated,
         fmt_bytes,
     );
@@ -242,7 +219,6 @@ fn print_section(
         chunking,
         "peak live",
         baseline.peak_live_bytes,
-        generic.peak_live_bytes,
         bytes.peak_live_bytes,
         fmt_bytes,
     );
@@ -254,17 +230,13 @@ fn main() {
         ("ai_stream", include_bytes!("../bench_data/ai_stream.bin")),
     ];
 
-    println!(
-        "| Workload | Chunking | Metric | eventsource-stream | sseer (generic) | sseer (bytes) |"
-    );
-    println!("|---|---|---|---|---|---|");
+    println!("| Workload | Chunking | Metric | eventsource-stream | sseer |");
+    println!("|---|---|---|---|---|");
 
     for &(name, data) in data_sets {
         let unaligned = load_chunks(data);
         let aligned = load_aligned(data);
 
-        let generic_unaligned = measure_sseer_generic(&unaligned);
-        let generic_aligned = measure_sseer_generic(&aligned);
         let bytes_unaligned = measure_sseer_bytes(&unaligned);
         let bytes_aligned = measure_sseer_bytes(&aligned);
         let es_unaligned = measure_eventsource_stream(&unaligned);
@@ -274,15 +246,8 @@ fn main() {
             name,
             &format!("unaligned ({CHUNK_SIZE}B)"),
             es_unaligned,
-            generic_unaligned,
             bytes_unaligned,
         );
-        print_section(
-            name,
-            "line-aligned",
-            es_aligned,
-            generic_aligned,
-            bytes_aligned,
-        );
+        print_section(name, "line-aligned", es_aligned, bytes_aligned);
     }
 }

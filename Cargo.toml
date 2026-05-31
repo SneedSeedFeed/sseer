@@ -1,6 +1,6 @@
 [package]
 name = "sseer"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Adam Stopher <adam.stopher@protonmail.com>"]
 edition = "2024"
 resolver = "3"
@@ -21,24 +21,30 @@ categories = [
 [dependencies]
 bytes = { version = "1.11.1", default-features = false }
 bytes-utils = { version = "0.1.4", default-features = false }
-futures-core = { version = "0.3.31", default-features = false }
+futures-core = { version = "0.3.32", default-features = false }
 
-memchr = { version = "2.8.0", default-features = false }
-pin-project-lite = { version = "0.2.16", default-features = false }
-reqwest = { version = "0.13.2", features = [
+memchr = { version = "2.8.1", default-features = false }
+pin-project-lite = { version = "0.2.17", default-features = false }
+reqwest = { version = "0.13.4", features = [
     "stream",
 ], default-features = false, optional = true }
 http-body-util = { version = "0.1.3", default-features = false, optional = true }
-futures-timer = { version = "3.0.3", default-features = false, optional = true }
+futures-timer = { version = "3.0.4", default-features = false, optional = true }
 serde = { version = "1.0.228", default-features = false, optional = true }
-serde_json = { version = "1.0.149", default-features = false, optional = true }
+serde_json = { version = "1.0.150", default-features = false, optional = true }
 serde_path_to_error = { version = "0.1.20", default-features = false, optional = true }
 
 
 [features]
 default = []
 reqwest = ["dep:reqwest", "dep:futures-timer", "dep:http-body-util", "std"]
-std = ["bytes/std", "bytes-utils/std", "futures-core/std", "memchr/std"]
+std = [
+    "bytes/std",
+    "bytes-utils/std",
+    "futures-core/std",
+    "memchr/std",
+    "memchr/use_std",
+]
 serde = ["dep:serde", "serde/derive", "bytes-utils/serde", "std"]
 json = [
     "dep:serde",
@@ -50,8 +56,9 @@ json = [
 
 
 [dev-dependencies]
-criterion = { version = "0.8.2", features = ["html_reports"] }
+criterion = { version = "0.8.2", features = ["html_reports", "async_tokio"] }
 eventsource-stream = "0.2.3"
+eventsource-stream2 = { version = "0.4", features = ["std"] }
 futures = "0.3.31"
 nom = { version = "7.1", default-features = false }
 tokio = { version = "1.49.0", features = ["full"] }
@@ -64,6 +71,10 @@ codegen-units = 1
 
 [[bench]]
 name = "bench"
+harness = false
+
+[[bench]]
+name = "long_lines"
 harness = false
 
 [[example]]

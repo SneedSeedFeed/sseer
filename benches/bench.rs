@@ -8,8 +8,8 @@ use crate::{
         NO_VALUE_LINE, generate_one_of_each,
     },
     event_stream::{
-        load_chunks, load_line_aligned_chunks, run_eventsource_stream, run_sseer,
-        run_sseer_bytes_only,
+        load_chunks, load_line_aligned_chunks, run_eventsource_stream, run_eventsource_stream2,
+        run_sseer,
     },
 };
 
@@ -83,18 +83,18 @@ fn bench_event_stream(c: &mut Criterion) {
         });
 
         group.bench_with_input(
-            BenchmarkId::new("sseer_bytes_only", &name),
-            chunks,
-            |b, chunks| {
-                b.iter(|| run_sseer_bytes_only(chunks));
-            },
-        );
-
-        group.bench_with_input(
             BenchmarkId::new("eventsource_stream", &name),
             chunks,
             |b, chunks| {
                 b.iter(|| run_eventsource_stream(chunks));
+            },
+        );
+
+        group.bench_with_input(
+            BenchmarkId::new("eventsource_stream2", &name),
+            chunks,
+            |b, chunks| {
+                b.iter(|| run_eventsource_stream2(chunks));
             },
         );
     }

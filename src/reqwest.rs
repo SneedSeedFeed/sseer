@@ -6,6 +6,7 @@ use core::{
     time::Duration,
 };
 
+use crate::event_stream::EventStream;
 use bytes_utils::Str;
 use futures_core::future::BoxFuture;
 use futures_timer::Delay;
@@ -21,7 +22,6 @@ use crate::{
     constants::EMPTY_STR,
     errors::{CantCloneError, EventStreamError},
     event::Event,
-    event_stream::bytes::EventStreamBytes,
     response_to_stream,
     retry::{DEFAULT_RETRY, ExponentialBackoff, RetryPolicy},
 };
@@ -68,7 +68,7 @@ pin_project! {
         },
         Open {
             #[pin]
-            stream: EventStreamBytes<BodyDataStream<Body>>,
+            stream: EventStream<BodyDataStream<Body>>,
             retry_state: Option<(usize, Duration)>,
         },
         Closed,
