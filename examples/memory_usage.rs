@@ -230,8 +230,8 @@ fn main() {
         ("ai_stream", include_bytes!("../bench_data/ai_stream.bin")),
     ];
 
-    println!("| Workload | Chunking | Metric | eventsource-stream  | sseer (bytes) |");
-    println!("|---|---|---|---|---|---|");
+    println!("| Workload | Chunking | Metric | eventsource-stream | sseer |");
+    println!("|---|---|---|---|---|");
 
     for &(name, data) in data_sets {
         let unaligned = load_chunks(data);

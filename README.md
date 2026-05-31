@@ -46,28 +46,28 @@ These benchmarks run the full stream implementation across some sample events in
 - ai_stream has its line lengths and ratios based on some responses I captured from OpenRouter, so is almost entirely made of data lines with some being quite long and some quite short. 512 events.
 - evenish_distribution just takes our data, comment, event and id field lines we use in the parse_line benchmark and stacks them end to end 128 times and also splits into 128 byte chunks.
 
-| Workload | Chunking | eventsource-stream | sseer (generic) | sseer (bytes) |
-|---|---|---|---|---|
-| mixed | unaligned | 171.5µs | 105.3µs (**1.6x**) | 105.3µs (**1.6x**) |
-| mixed | line-aligned | 215.9µs | 152.2µs (**1.4x**) | 109.8µs (**2.0x**) |
-| ai_stream | unaligned | 331.8µs | 75.2µs (**4.4x**) | 75.1µs (**4.4x**) |
-| ai_stream | line-aligned | 200.0µs | 102.1µs (**2.0x**) | 60.2µs (**3.3x**) |
-| evenish_distribution | unaligned | 53.7µs | 34.1µs (**1.6x**) | 33.0µs (**1.6x**) |
+| Workload | Chunking | eventsource-stream | sseer |
+|---|---|---|---|
+| mixed | unaligned | 188.1µs | 103.2µs (**1.8x**) |
+| mixed | line-aligned | 231.1µs | 112.9µs (**2.0x**) |
+| ai_stream | unaligned | 342.9µs | 72.3µs (**4.7x**) |
+| ai_stream | line-aligned | 201.2µs | 64.0µs (**3.1x**) |
+| evenish_distribution | unaligned | 51.5µs | 32.8µs (**1.6x**) |
 
 ### Memory
-This is available under the example with `cargo run --example memory_usage`. I just use a global allocator that tracks calls to alloc and stores some stats, it's probably not perfectly accurate but hopefully it lets you get the gist. The main advantage `sseer` has over `eventsource-stream` is that we use `bytes::Bytes` as much as possible to reduce allocation, and we also avoid allocating a buffer for the data line in cases where there's only one data line. On the stream specialised on just `bytes::Bytes` streams instead of `AsRef<[u8]>` we also avoid allocating any time a new stream item makes a complete line, hence why the line-aligned case looks so good for us
+This is available under the example with `cargo run --example memory_usage --features std`. I just use a global allocator that tracks calls to alloc and stores some stats, it's probably not perfectly accurate but hopefully it lets you get the gist. The main advantage `sseer` has over `eventsource-stream` is that we use `bytes::Bytes` as much as possible to reduce allocation, and we also avoid allocating a buffer for the data line in cases where there's only one data line. Because the stream accepts anything `Into<Bytes>` (so `bytes::Bytes` and `Vec<u8>` convert for free), we slice events straight out of the incoming chunk and avoid allocating any time a stream item completes a line, hence why the line-aligned case looks so good for us
 
-| Workload | Chunking | Metric | eventsource-stream | sseer (generic) | sseer (bytes) |
-|---|---|---|---|---|---|
-| mixed | unaligned (128B) | alloc calls | 4,753 | 546 (**8.7x**) | 535 (**8.9x**) |
-| mixed | unaligned (128B) | total bytes | 188.1 KiB | 35.8 KiB (**5.3x**) | 34.2 KiB (**5.5x**) |
-| mixed | unaligned (128B) | peak live | 488 B | 742 B (**0.7x**) | 739 B (**0.7x**) |
-| mixed | line-aligned | alloc calls | 6,034 | 1,743 (**3.5x**) | 306 (**19.7x**) |
-| mixed | line-aligned | total bytes | 92.8 KiB | 49.9 KiB (**1.9x**) | 11.5 KiB (**8.1x**) |
-| mixed | line-aligned | peak live | 171 B | 299 B (**0.6x**) | 93 B (**1.8x**) |
-| ai_stream | unaligned (128B) | alloc calls | 4,094 | 7 (**584.9x**) | 7 (**584.9x**) |
-| ai_stream | unaligned (128B) | total bytes | 669.2 KiB | 7.9 KiB (**84.6x**) | 7.9 KiB (**84.6x**) |
-| ai_stream | unaligned (128B) | peak live | 6.7 KiB | 6.0 KiB (**1.1x**) | 6.0 KiB (**1.1x**) |
-| ai_stream | line-aligned | alloc calls | 3,576 | 1,537 (**2.3x**) | 0 (**∞**) |
-| ai_stream | line-aligned | total bytes | 515.3 KiB | 123.9 KiB (**4.2x**) | 0 B (**∞**) |
-| ai_stream | line-aligned | peak live | 7.3 KiB | 1.5 KiB (**4.7x**) | 0 B (**∞**) |
+| Workload | Chunking | Metric | eventsource-stream | sseer |
+|---|---|---|---|---|
+| mixed | unaligned (128B) | alloc calls | 4,753 | 535 (**8.9x**) |
+| mixed | unaligned (128B) | total bytes | 188.1 KiB | 34.2 KiB (**5.5x**) |
+| mixed | unaligned (128B) | peak live | 488 B | 739 B (**0.7x**) |
+| mixed | line-aligned | alloc calls | 6,034 | 306 (**19.7x**) |
+| mixed | line-aligned | total bytes | 92.8 KiB | 11.5 KiB (**8.1x**) |
+| mixed | line-aligned | peak live | 171 B | 93 B (**1.8x**) |
+| ai_stream | unaligned (128B) | alloc calls | 4,094 | 7 (**584.9x**) |
+| ai_stream | unaligned (128B) | total bytes | 669.2 KiB | 7.9 KiB (**84.6x**) |
+| ai_stream | unaligned (128B) | peak live | 6.7 KiB | 6.0 KiB (**1.1x**) |
+| ai_stream | line-aligned | alloc calls | 3,576 | 0 (**∞**) |
+| ai_stream | line-aligned | total bytes | 515.3 KiB | 0 B (**∞**) |
+| ai_stream | line-aligned | peak live | 7.3 KiB | 0 B (**∞**) |

@@ -1,4 +1,4 @@
-//! [`Stream`][futures_core::Stream] that converts a stream of [`Bytes`][::bytes::Bytes] into [`Event`]s
+//! [`Stream`] that converts a stream of [`Bytes`] into [`Event`]s
 
 use crate::{
     constants::{BOM, CR, EMPTY_STR, LF, MESSAGE_STR},
