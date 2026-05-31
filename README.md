@@ -1,3 +1,6 @@
+## Note for 0.3.x
+Should be mostly non-breaking, the generic variant of `EventStream` has been replaced by the `Bytes` specific version which now has a bound of `Into<Bytes>`. If you define your own types you may need to add an `Into<Bytes>` implementation, most relevant `std` types already implement this. I would recommend the upgrade as it fixes a performance issue.
+
 # `sseer` (sse - er)
 
 ## What?
